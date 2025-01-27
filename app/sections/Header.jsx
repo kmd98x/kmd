@@ -12,10 +12,10 @@ export default function Header() {
                 </div>
                 <div className="border border-[#FFFDD0]/50 py-1.5 w-12 rounded-md text-sm text-[#FFFDD0]/50">NL</div>
             </div>
-            <div className="logo-container mb-60">
+            <div className="logo-container mb-48">
                 <img
                     className="mx-auto inline-block"
-                    src="/telefoonlogo.svg"
+                    src="/groterelogo.svg"
                     alt="logo"
                 />
             </div>

@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { Inter, Julius_Sans_One, Metal } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const julius = Julius_Sans_One({ subsets: ["latin"], weight: "400" });
+const metal = Metal({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
 	title: "Create Next App",
@@ -12,7 +14,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.variable} antialiased`}
+				className={`${inter.variable} ${julius.variable} ${metal.variable} antialiased`}
 			>
 				{children}
 			</body>
