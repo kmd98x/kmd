@@ -10,8 +10,8 @@ export default function About() {
             />
 
             <div className="-mt-16 container">
-                <h2 className="text-2xl font-bold mb-4">Over mij</h2>
-                <p>
+                <h2 className="text-xl font-bold mb-4">Over mij</h2>
+                <p className="text-[15px]">
                     Ik ben Martina Doekharan, 2e jaars student Communication and
                     Multimedia Design aan de Hogeschool van Amsterdam. Mijn
                     passie ligt in het ontwikkelen van digitale producten die de
