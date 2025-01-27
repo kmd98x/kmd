@@ -2,20 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@media screen and (min-width: 360px) {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+	/* General Reset */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	.container {
+		@apply max-w-6xl mx-auto px-8;
+	}
+
+	p, h1, h2, h3, h4, h5, h6 {
+		@apply text-[#fffdd0];
+	}
+
+	/* Body */
+	body {
+		font-family: "inter", sans-serif;
+		color: #e4e4e4;
+		line-height: 1.6;
+		background: #000000;
+		margin: 0;
+	}
+
+	/* Header */
+	header {
+		text-align: center;
+		padding: 40px 0;
+		background: linear-gradient(to bottom,
+				rgba(102, 102, 102, 0.55),
+				#000000);
+		height: 100vh;
+	}
+
+	.header-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	/* Footer */
+	footer {
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	footer h2 {
+		font-size: 18px;
+		color: #d6c79c;
+	}
+
+	footer p {
+		margin-bottom: 20px;
+	}
+
+	.contact-info {
+		font-size: 14px;
+	}
+
+	.contact-info p {
+		margin: 5px 0;
+	}
+
+	.social-media a {
+		margin: 0 10px;
+		color: #d6c79c;
+		text-decoration: none;
+	}
 }
