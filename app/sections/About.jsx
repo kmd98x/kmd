@@ -9,7 +9,7 @@ export default function About() {
                 alt="foto van KMD"
             />
 
-            <div className="-mt-16 container">
+            <div className="-mt-32 container">
                 <h2 className="text-xl font-bold mb-4">Over mij</h2>
                 <p className="text-[15px]">
                     Ik ben Martina Doekharan, 2e jaars student Communication and

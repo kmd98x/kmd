@@ -1,10 +1,14 @@
+"use client"
 import React from "react";
-
+import HamburgerMenu from "../components/HamburgerMenu";
 export default function Header() {
+    const [isOpen, setIsOpen] = React.useState(false);
     return (
-        <header>
+        <header id="home">
+            <HamburgerMenu isOpen={isOpen} links={["Home", "Over mij", "Projecten", "Contact"]} />   
             <div className="flex flex-col items-end gap-4 px-3">
-                <div className="flex flex-col gap-1.5 border border-[#FFFDD0]/50 py-2 w-12 rounded-md items-center justify-center">
+                <div className="flex flex-col gap-1.5 border border-[#FFFDD0]/50 py-2 w-12 rounded-md items-center justify-center"
+                onClick={() => setIsOpen(!isOpen)}>
                     <span className="bg-[#FFFDD0]/50 h-px w-5 inline-block"></span>
                     <span className="bg-[#FFFDD0]/50 h-px w-5 inline-block"></span>
                     <span className="bg-[#FFFDD0]/50 h-px w-5 inline-block"></span>
