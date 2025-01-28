@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <footer>
+        <footer id="footer">
             <h2>Neem contact op</h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur. Cursus vitae sapien
@@ -15,7 +15,6 @@ export default function Footer() {
                 <div className="social-media">
                     <a href="#">LinkedIn</a>
                     <a href="#">Instagram</a>
-                    <a href="#">GitHub</a>
                 </div>
             </div>
         </footer>

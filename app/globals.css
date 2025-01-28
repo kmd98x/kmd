@@ -32,13 +32,13 @@
 	header {
 		text-align: center;
 		padding: 20px 0;
+		margin-bottom: 20vh;
 		background: linear-gradient(to bottom,
-				rgba(102, 102, 102, 0.55),
+				rgba(102, 102, 102, 0.85),
 				#000000);
-		height: 100vh;
+		height: 80vh;
 		display: flex;
 		flex-direction: column;
-		gap:200px;
 	}
 
 	.header-container {
