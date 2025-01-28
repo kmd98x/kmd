@@ -9,7 +9,7 @@ export default function SlideContent({ image, title, text, link}) {
                 alt="Laptop"
             />
 
-            <div className="h-3/4 relative mt-auto mb-0 size-full bg-gradient-to-t from-black flex flex-col items-start justify-end gap-1 p-5 hover:opacity-0 duration-500 transition-opacity">
+            <div className="h-3/4 relative mt-auto mb-0 size-full bg-gradient-to-t from-black flex flex-col items-start justify-end gap-1 p-5 duration-500 transition-opacity">
                 <h3 className="font-bold">{title}</h3>
                 <p>
                     {text}
