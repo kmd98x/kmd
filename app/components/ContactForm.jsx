@@ -16,8 +16,26 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={() => submitForm()}>
-            <div>ContactForm</div>
+        <form onSubmit={() => submitForm()} className="my-10 flex flex-col gap-8">
+            <div className="flex flex-col items-start">
+                <label for="name">Naam</label>
+                <input type="text" id="name" className="w-full p-1 bg-transparent border-b border-[#fffdd0]" />
+            </div>
+            
+            <div className="flex flex-col items-start">
+                <label for="mail">Email</label>
+                <input type="mail" id="mail" className="w-full p-1 bg-transparent border-b border-[#fffdd0]" />
+            </div>
+            
+            <div className="flex flex-col items-start">
+                <label for="message">Bericht</label>
+                <textarea 
+                    name="message" 
+                    id="message" 
+                    rows={3} 
+                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]">
+                </textarea>
+            </div>
         </form>
     );
 }
