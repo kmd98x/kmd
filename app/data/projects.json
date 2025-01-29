@@ -1,50 +1,59 @@
-[{
-    "image": "portfolio.png",
-    "title": "Mijn eerste portfolio",
-    "text": "Lorem ipsum tren vallning hexade såsom pågåt. Kvasilgen öbel prekanar. Osunat prebeliga bävls.",
-    "link": "https://www.figma.com/proto/IsvvrtYEZJNHAAfpJsyBxW/Blok-2-SLB-Workout-app?node-id=105-3&t=hnGenhcS1xf4FUlF-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=105%3A3&show-proto-sidebar=1&hide-ui=1"
-},
-{
-    "image": "reizen.png",
-    "title": "EUtribe",
-    "text": "Voor een schoolproject creëerde ik een app voor reisliefhebbers, waarbij ik het prototype in Figma heb ontworpen.",
-    "link": "https://kmd98x.github.io/kmdportfolio/index.html"
-},
-{
-    "image": "workout.png",
-    "title": "Synergy app",
-    "text": "Voor een schoolproject creëerde ik een app voor sportliefhebbers, waarbij ik het prototype in Figma heb ontworpen."
-},
-{
-    "image": "bib.png",
-    "title": "Boekenzoeker",
-    "text": "Voor een schoolproject creëerde  ik een app voor Amsterdam waarmee kinderen van 12-17 jaar eenvoudig boeken kunnen vinden."
-},
-{
-    "image": "parfum.png",
-    "title": "Mijn favoriete geurtjes",
-    "text": "Lorem ipsum tren vallning hexade såsom pågåt. Kvasilgen öbel prekanar. Osunat prebeliga bävls",
-    "link": "https://kmd98x.github.io/MartinaDoekharan_Narcis_Eindopdracht_Internetstandaarden/index.html"
-},
-{
-    "image": "duurzaam.png",
-    "title": "DBB",
-    "text": "Lorem ipsum tren vallning hexade såsom pågåt. Kvasilgen öbel prekanar. Osunat prebeliga bävls"
-},
-{
-    "image": "kmd.png",
-    "title": "KMD",
-    "text": "Lorem ipsum tren vallning hexade såsom pågåt. Kvasilgen öbel prekanar. Osunat prebeliga bävls",
-    "link": "https://www.figma.com/proto/IsvvrtYEZJNHAAfpJsyBxW/Blok-2-SLB-Workout-app?node-id=105-3&t=hnGenhcS1xf4FUlF-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=105%3A3&show-proto-sidebar=1&hide-ui=1"
-},
-{
-    "image": "flyers.png",
-    "title": "Flyers",
-    "text": "Lorem ipsum tren vallning hexade såsom pågåt. Kvasilgen öbel prekanar. Osunat prebeliga bävls"
-},
-{
-    "image": "hema.png",
-    "title": "Cupcake maker",
-    "text": "Lorem ipsum tren vallning hexade såsom pågåt. Kvasilgen öbel prekanar. Osunat prebeliga bävls"
-}
+[
+    {
+        "image": "portfolio.png",
+        "title": "Mijn eerste portfolio",
+        "text": "Dit is mijn allereerste portfoliowebsite.",
+        "link": "https://kmd98x.github.io/kmdportfolio/index.html"
+    },
+    {
+        "image": "reizen.png",
+        "title": "EUtribe",
+        "text": "Een app waarmee reisliefhebbers samen kunnen reizen.",
+        "link": "https://www.figma.com/proto/DEvChDzRhSsFyn705N7Ysl/Project-included?node-id=1-23&p=f&t=TxByK7Y9F7LPfas4-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A23"
+    },
+    {
+        "image": "workout.png",
+        "title": "Synergy app",
+        "text": "Een app voor sportliefhebbers om workouts te vinden.",
+        "link": "https://www.figma.com/proto/IsvvrtYEZJNHAAfpJsyBxW/Blok-2-SLB-Workout-app?node-id=105-3&t=hnGenhcS1xf4FUlF-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=105%3A3&show-proto-sidebar=1&hide-ui=1"
+    },
+    {
+        "image": "bib.png",
+        "title": "Boekenzoeker",
+        "text": "Een app voor de Gemeente Amsterdam waarmee kinderen van 12-17 jaar makkelijk boeken kunnen vinden.",
+        "link": "https://www.figma.com/proto/gEpnbLWprLs40JKNfeQvU1/Blok-3-VID-8?node-id=111-323&t=4Zavou8VYWwn4I0m-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=111%3A323&show-proto-sidebar=1&hide-ui=1"
+    },
+    {
+        "image": "hangman.png",
+        "title": "Boekenzoeker",
+        "text": "Het eerste spel dat ik heb gemaakt met HTML, CSS en JavaScript.",
+        "link": "https://kmd98x.github.io/finalhangman/"
+    },
+    {
+        "image": "parfum.png",
+        "title": "Mijn favoriete geurtjes",
+        "text": "De eerste website die ik heb gebouwd met HTML en CSS.",
+        "link": "https://kmd98x.github.io/MartinaDoekharan_Narcis_Eindopdracht_Internetstandaarden/index.html"
+    },
+    {
+        "image": "duurzaam.png",
+        "title": "DBB",
+        "text": "Een app die mensen helpt bewuster om te gaan met duurzaamheid.",
+        "link": "https://kmd98x.github.io/DBB/reserveren.html"
+    },
+    {
+        "image": "kmd.png",
+        "title": "KMD",
+        "text": "Een app waarmee je online kleding kunt passen en bestellen."
+    },
+    {
+        "image": "flyers.png",
+        "title": "Flyers",
+        "text": "In mijn vrije tijd ontwerp ik flyers en andere designs voor kennissen"
+    },
+    {
+        "image": "hema.png",
+        "title": "Cupcake maker",
+        "text": "Voor een schoolproject maakte ik een webpagina voor HEMA, waar klanten gepersonaliseerde cupcakes kunnen ontwerpen en bestellen."
+    }
 ]

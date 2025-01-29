@@ -16,7 +16,7 @@ export default function Projects() {
                 <Swiper
                     className="!overflow-visible"
                     spaceBetween={20}
-                    slidesPerView={1}
+                    slidesPerView={1.05}
                     breakpoints={{
                         768: {
                             slidesPerView: 2,

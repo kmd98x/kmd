@@ -1,5 +1,4 @@
 import React from "react";
-import ArrowRight from "./icons/ArrowRight";
 
 export default function SlideContent({ image, title, text, link }) {
     return (
@@ -7,23 +6,23 @@ export default function SlideContent({ image, title, text, link }) {
             {link ? (
                 <a
                     href={link}
-                    className="flex flex-col items-stretch justify-between h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.09] to-white/[.03] group"
+                    className="flex flex-col items-stretch justify-between h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.09] to-white/[.03] py-7 px-5"
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <img
                             src={`/projects/${image}`}
-                            className="size-full object-contain absolute px-5"
+                            className="size-full object-contain absolute"
                             alt="Laptop"
                         />
                     </div>
 
-                    <div className="py-10 px-5">
+                    <div>
                         <h3 className="font-bold">{title}</h3>
                         <p className="text-sm max-w-[40ch]">{text}</p>
                     </div>
                 </a>
             ) : (
-                <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.09] to-white/[.03]">
+                <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.09] to-white/[.03] py-7 px-5">
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <img
                             src={`/projects/${image}`}
@@ -32,7 +31,7 @@ export default function SlideContent({ image, title, text, link }) {
                         />
                     </div>
 
-                    <div className="py-10 px-5">
+                    <div>
                         <h3 className="font-bold">{title}</h3>
                         <p className="text-sm">{text}</p>
                     </div>
