@@ -9,7 +9,7 @@ export default function Projects() {
     return (
         <section className="my-20 overflow-hidden" id="projects">
             <div className="container">
-                <h2 className="text-xl font-bold mb-4">Mijn Projecten</h2>
+                <h2 className="text-xl font-bold mb-4 pb-1">Mijn Projecten</h2>
     
                 <Swiper
                     className="!overflow-visible"

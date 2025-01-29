@@ -1,8 +1,10 @@
+"use client"
+
 import React from "react";
 import { Resend } from "resend";
 
 export default function ContactForm() {
-    const resend = new Resend(process.env.NEXT_APP_RESENT_API_KEY);
+    const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
 
     const submitForm = () => {
         resend.emails.send({
