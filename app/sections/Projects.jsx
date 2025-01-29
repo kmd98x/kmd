@@ -2,6 +2,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+
+// Components
 import SlideContent from "../components/SlideContent";
 import projects from '../data/projects'
 
@@ -14,7 +16,7 @@ export default function Projects() {
                 <Swiper
                     className="!overflow-visible"
                     spaceBetween={20}
-                    slidesPerView={1.25}
+                    slidesPerView={1}
                     breakpoints={{
                         768: {
                             slidesPerView: 2,
@@ -22,7 +24,7 @@ export default function Projects() {
                     }}
                 >
                     {projects.map((project, index) => (
-                        <SwiperSlide key={index} className="project aspect-[4/5]">
+                        <SwiperSlide key={index} className="project aspect-[4/6]">
                             <SlideContent {...project} />
                         </SwiperSlide>
                     ))}
