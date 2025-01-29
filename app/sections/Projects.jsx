@@ -22,7 +22,7 @@ export default function Projects() {
                     }}
                 >
                     {projects.map((project, index) => (
-                        <SwiperSlide key={index} className="project aspect-[4/6] rounded-lg overflow-hidden">
+                        <SwiperSlide key={index} className="project aspect-[4/5]">
                             <SlideContent {...project} />
                         </SwiperSlide>
                     ))}
