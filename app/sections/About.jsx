@@ -1,9 +1,8 @@
 import React from "react";
-import Button from "../components/Button";
 
 export default function About() {
     return (
-        <section id="about" className="md:flex md:flex-row-reverse md:items-center md:min-h-screen relative">
+        <section id="about" className="md:flex md:flex-row-reverse md:items-center md:py-32relative">
             <img
                 className="md:max-w-3xl md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 -z-10"
                 src="/bewerktefoto2.png"
@@ -20,7 +19,6 @@ export default function About() {
                     me op UX-design, een vakgebied dat mij zowel creatief als
                     technisch uitdaagt.
                 </p>
-                <Button type="link" text="Neem contact op" />
             </div>
         </section>
     );
