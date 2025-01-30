@@ -1,5 +1,8 @@
 import React from "react";
 import ContactForm from "../components/ContactForm";
+import LinkedIn from "../components/icons/LinkedIn";
+import Instagram from "../components/icons/Instagram";
+import WhatsApp from "../components/icons/WhatsApp";
 
 export default function Footer() {
     return (
@@ -9,16 +12,12 @@ export default function Footer() {
 
             <ContactForm />
 
-            <div className="text-left">
-                <p className="mb-2">📞 +31620847475</p>
-                <p className="mb-2">📧 kmdB9x@hotmail.com</p>
-                <p>📍 Amsterdam</p>
-
-                <div className="flex items-center gap-2 text-[#fffdd0] mt-5">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Instagram</a>
-                </div>
+            <div className="flex items-center gap-5 text-[#fffdd0] mt-5">
+                <a href="https://linkedin.com/in/kmd98"><LinkedIn /></a>
+                <a href="https://instagram.com/kmd98.x"><Instagram /></a>
+                <a href="https://wa.me/15551234567"><WhatsApp /></a>
             </div>
         </footer>
     );
 }
+
