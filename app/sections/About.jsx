@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../components/Button";
 
 export default function About() {
     return (
@@ -19,9 +20,7 @@ export default function About() {
                     me op UX-design, een vakgebied dat mij zowel creatief als
                     technisch uitdaagt.
                 </p>
-                <button className="bg-[#FFFDD0] text-black border-0 py-2 px-4 mt-5 rounded-md cursor-pointer">
-                    Neem contact op
-                </button>
+                <Button type="link" text="Neem contact op" />
             </div>
         </section>
     );

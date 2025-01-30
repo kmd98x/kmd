@@ -1,41 +1,48 @@
-"use client"
+"use client";
 
-import React from "react";
-import { Resend } from "resend";
+import React, { useActionState } from "react";
+
+// import { Resend } from "resend";
+import Button from "./Button";
 
 export default function ContactForm() {
-    const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
-
-    const submitForm = () => {
-        resend.emails.send({
-            from: "onboarding@resend.dev",
-            to: "kmd98x@outlook.com",
-            subject: "Hello World",
-            html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
-        });
-    };
-
+    const [state, action, isPending] = useActionState();
+    console.log(state);
+    
     return (
-        <form onSubmit={() => submitForm()} className="my-10 flex flex-col gap-8">
-            <div className="flex flex-col items-start">
-                <label for="name">Naam</label>
-                <input type="text" id="name" className="w-full p-1 bg-transparent border-b border-[#fffdd0]" />
+        <form
+            action={action}
+            className="my-10 flex flex-col items-start gap-8"
+        >
+            <div className="flex flex-col w-full items-start">
+                <label htmlFor="name">Naam</label>
+                <input
+                    type="text"
+                    id="name"
+                    className="w-full p-1 bg-transparent border-b-[0.5px] border-[#fffdd0]/50"
+                />
             </div>
-            
-            <div className="flex flex-col items-start">
-                <label for="mail">Email</label>
-                <input type="mail" id="mail" className="w-full p-1 bg-transparent border-b border-[#fffdd0]" />
+
+            <div className="flex flex-col w-full items-start">
+                <label htmlFor="mail">Email</label>
+                <input
+                    type="mail"
+                    id="mail"
+                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50"
+                />
             </div>
-            
-            <div className="flex flex-col items-start">
-                <label for="message">Bericht</label>
-                <textarea 
-                    name="message" 
-                    id="message" 
-                    rows={3} 
-                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]">
-                </textarea>
+
+            <div className="flex flex-col w-full items-start">
+                <label htmlFor="message">Bericht</label>
+                <textarea
+                    name="message"
+                    id="message"
+                    rows={3}
+                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50"
+                ></textarea>
             </div>
+
+            <Button type="submit" text="Verstuur" />
         </form>
     );
 }

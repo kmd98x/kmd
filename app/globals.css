@@ -44,27 +44,10 @@ header {
 	align-items: center;
 }
 
-/* Footer */
-footer {
-	text-align: center;
-	margin-top: 40px;
-}
-
-footer h2 {
-	font-size: 18px;
-	color: #d6c79c;
-}
-
 .contact-info {
 	font-size: 14px;
 }
 
 .contact-info p {
 	margin: 5px 0;
-}
-
-.social-media a {
-	margin: 0 10px;
-	color: #d6c79c;
-	text-decoration: none;
 }
