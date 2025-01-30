@@ -19,7 +19,7 @@ export default function ContactForm() {
                 <input
                     type="text"
                     id="name"
-                    className="w-full p-1 bg-transparent border-b-[0.5px] border-[#fffdd0]/50"
+                    className="w-full p-1 bg-transparent border-b-[0.5px] border-[#fffdd0]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#fffdd0] transition"
                 />
             </div>
 
@@ -28,7 +28,7 @@ export default function ContactForm() {
                 <input
                     type="mail"
                     id="mail"
-                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50"
+                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#fffdd0] transition"
                 />
             </div>
 
@@ -38,7 +38,7 @@ export default function ContactForm() {
                     name="message"
                     id="message"
                     rows={3}
-                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50 active:outline-none"
+                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#fffdd0] transition"
                 ></textarea>
             </div>
 
