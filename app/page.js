@@ -5,7 +5,7 @@ import Projects from "@/app/sections/Projects";
 
 export default function Home() {
 	return (
-		<div className="flex flex-col gap-16">
+		<div className="flex flex-col gap-[clamp(4rem,-6.536rem_+_28.095vw,4rem)]">
 			<Header />
 			<About />
 			<Projects />
