@@ -15,11 +15,17 @@ export default function Projects() {
     
                 <Swiper
                     className="!overflow-visible"
+                    direction="horizontal"
                     spaceBetween={20}
                     slidesPerView={1.05}
+                    mousewheel={true}
+                    freeMode={true}
                     breakpoints={{
-                        768: {
+                        600: {
                             slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
                         },
                     }}
                 >

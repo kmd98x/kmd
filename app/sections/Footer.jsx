@@ -7,8 +7,9 @@ import Envelope from "../components/icons/Envelope";
 export default function Footer() {
     return (
         <footer id="footer" className="container pb-12 mt-10">
+            <div className="mb-10 border-t border-[#fffdd0]/5"></div>
             <h2 className="text-xl  font-bold mb-4">Neem contact op</h2>
-            <p>Geïnteresseerd in mijn werk? Neem gerust contact op via het onderstaande e-mail adres of telefoonnummer.</p>
+            <p className="max-w-[58ch]">Geïnteresseerd in mijn werk? Neem gerust contact op via het onderstaande e-mail adres of telefoonnummer.</p>
 
             <a href="mailto:kmd98x@hotmail.com" className="text-[#fffdd0] flex items-center gap-2 mt-5">
                 <Envelope />
