@@ -6,7 +6,7 @@ export default function SlideContent({ image, title, text, link }) {
             {link ? (
                 <a
                     href={link}
-                    className="flex flex-col items-stretch justify-between h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.09] to-white/[.03] py-7 px-5"
+                    className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5"
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <img
@@ -22,7 +22,7 @@ export default function SlideContent({ image, title, text, link }) {
                     </div>
                 </a>
             ) : (
-                <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.09] to-white/[.03] py-7 px-5">
+                <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5">
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <img
                             src={`/projects/${image}`}

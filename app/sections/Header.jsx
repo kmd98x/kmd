@@ -17,7 +17,7 @@ export default function Header() {
             </div>
             <div className="my-auto">
                 <img
-                    className="mx-auto inline-block h-auto w-[clamp(13.5rem,-24.375rem_+_101vw,30rem)]"
+                    className="mx-auto inline-block h-auto translate-y-[50px] w-[clamp(13.5rem,-24.375rem_+_101vw,30rem)]"
                     src="/logo-desktop.svg"
                     alt="logo"
                 />
