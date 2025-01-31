@@ -6,7 +6,7 @@ import Envelope from "../components/icons/Envelope";
 
 export default function Footer() {
     return (
-        <footer id="footer" className="container pb-12 h-screen flex items-center">
+        <footer id="footer" className="container pb-12 flex items-center">
             <div className="w-full">
                 <div className="mb-10 border-t border-[#fffdd0]/15"></div>
                 <h2 className="text-xl text-center font-bold mb-4">Neem contact op</h2>
