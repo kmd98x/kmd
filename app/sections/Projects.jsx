@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, FreeMode } from 'swiper/modules';
 import "swiper/css";
 
 // Components
@@ -9,19 +10,20 @@ import projects from '../data/projects'
 
 export default function Projects() {
     return (
-        <section className="overflow-hidden" id="projects">
-            <div>
+        <section className="overflow-hidden h-screen grid grid-cols-1 items-center" id="projects">
+            <div className="my-auto">
                 <div className="container">
                     <h2 className="text-xl font-bold mb-4 pb-1">Mijn Projecten</h2>
                 </div>
     
                 <div className="px-5">
                     <Swiper
+                        modules={[Mousewheel, FreeMode]}
+                        mousewheel={true}
                         className="!overflow-visible"
                         direction="horizontal"
                         spaceBetween={20}
                         slidesPerView={1.05}
-                        mousewheel={true}
                         freeMode={true}
                         breakpoints={{
                             600: {

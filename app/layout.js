@@ -1,9 +1,8 @@
-import { Inter, Julius_Sans_One, Metal } from "next/font/google";
+import { Alegreya_Sans, Alegreya_Sans_SC } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-const julius = Julius_Sans_One({ subsets: ["latin"], weight: "400" });
-const metal = Metal({ subsets: ["latin"], weight: "400" });
+const AlegreyaSans = Alegreya_Sans({ subsets: ["latin"], weight: "400" });
+const AlegreyaSansSC = Alegreya_Sans_SC({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
 	title: "Martina Doekharan",
@@ -14,7 +13,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.variable} ${julius.variable} ${metal.variable} antialiased`}
+				className={`${AlegreyaSans.variable} ${AlegreyaSansSC.variable} antialiased`}
 			>
 				{children}
 			</body>

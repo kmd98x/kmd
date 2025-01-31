@@ -6,19 +6,23 @@
 	@apply max-w-6xl mx-auto px-8;
 }
 
-p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	@apply text-[#fffdd0];
+	@apply text-[#fffdd0] tracking-[0.2em] uppercase;
+	font-family: "Alegreya Sans SC", sans-serif;
+}
+
+p, a {
+	@apply text-[#fffdd0] tracking-[0.06em];
+	font-family: "Alegreya Sans", sans-serif;
 }
 
 /* Body */
 body {
-	font-family: "inter", sans-serif;
 	color: #e4e4e4;
 	line-height: 1.6;
 	background: #000000;

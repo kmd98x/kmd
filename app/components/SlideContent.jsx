@@ -19,6 +19,8 @@ export default function SlideContent({ image, title, text, link }) {
                     <div>
                         <h3 className="font-bold">{title}</h3>
                         <p className="text-sm max-w-[40ch]">{text}</p>
+
+                        <span className="inline-block border border-[#fffdd0]/50 rounded-lg px-2 py-1 mt-2">Bekijk project</span>
                     </div>
                 </a>
             ) : (
