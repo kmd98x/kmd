@@ -24,8 +24,14 @@
         "link": "https://www.figma.com/proto/gEpnbLWprLs40JKNfeQvU1/Blok-3-VID-8?node-id=111-323&t=4Zavou8VYWwn4I0m-0&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=111%3A323&show-proto-sidebar=1&hide-ui=1"
     },
     {
+        "image": "rotterdam.svg",
+        "title": "Gemeente Rotterdam",
+        "text": "Een evenement van de Gemeente Rotterdam promoten via een webpagina.",
+        "link": "https://www.figma.com/proto/OUE1gLNHqY7nxWFV04MV26/Untitled?node-id=1-633&p=f&t=aM8pxkPlesN0eeCI-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
+    },
+    {
         "image": "hangman.png",
-        "title": "Boekenzoeker",
+        "title": "Hangman",
         "text": "Het eerste spel dat ik heb gemaakt met HTML, CSS en JavaScript.",
         "link": "https://kmd98x.github.io/finalhangman/"
     },

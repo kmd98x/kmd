@@ -14,7 +14,7 @@ export default function aboutImageAnimation(imageContainer) {
     tl.from(imageContainer, {
         width: 0,
         right: 0,
-        duration: 1,
+        duration: 2,
         ease: "power4.inOut",
     });
 }
