@@ -33,8 +33,8 @@ export default function About() {
     }
 
     useEffect(() => {
-        titleAnimation(titleRef.current);
         aboutImageAnimation(imageContainer.current);
+        titleAnimation(titleRef.current);
         aboutTextAnimation(textContent.current);
     }, []);
 

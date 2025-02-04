@@ -6,6 +6,7 @@ export default function SlideContent({ image, title, text, link }) {
             {link ? (
                 <a
                     href={link}
+                    target="_blank"
                     className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5"
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
