@@ -1,14 +1,18 @@
 "use client";
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, FreeMode } from 'swiper/modules';
-import "swiper/css";
+import React, { useEffect, useRef } from "react";
 
 // Components
 import SlideContent from "../components/SlideContent";
 import projects from '../data/projects'
+import projectsAnimation from "../animations/projectsAnimation";
 
 export default function Projects() {
+    const container = useRef(null);
+    
+    useEffect(() => {
+        projectsAnimation(container.current);
+    }, [])
+
     return (
         <section className="overflow-hidden grid grid-cols-1 items-center py-16" id="projects">
             <div className="my-auto">
@@ -17,29 +21,11 @@ export default function Projects() {
                 </div>
     
                 <div className="px-5">
-                    <Swiper
-                        modules={[Mousewheel, FreeMode]}
-                        mousewheel={true}
-                        className="!overflow-visible"
-                        direction="horizontal"
-                        spaceBetween={20}
-                        slidesPerView={1.05}
-                        freeMode={true}
-                        breakpoints={{
-                            600: {
-                                slidesPerView: 2,
-                            },
-                            1024: {
-                                slidesPerView: 4,
-                            },
-                        }}
-                    >
+                    <div className="flex gap-8 flex-nowrap" ref={container}>
                         {projects.map((project, index) => (
-                            <SwiperSlide key={index} className="project aspect-[4/5.5]">
-                                <SlideContent {...project} />
-                            </SwiperSlide>
+                            <SlideContent key={index} {...project} />
                         ))}
-                    </Swiper>
+                    </div>
                 </div>
             </div>
         </section>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SlideContent({ image, title, text, link }) {
     return (
-        <>
+        <div className="project flex-shrink-0 w-[clamp(18rem,14.429rem_+_9.524vw,23rem)] aspect-[4/5.5]">
             {link ? (
                 <a
                     href={link}
@@ -39,6 +39,6 @@ export default function SlideContent({ image, title, text, link }) {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }

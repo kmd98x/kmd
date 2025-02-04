@@ -1,17 +1,63 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+// Animations
+import aboutImageAnimation from "../animations/aboutImageAnimation";
+import titleAnimation from "../animations/titleAnimation";
+import aboutTextAnimation from "../animations/aboutTextAnimation";
 
 export default function About() {
-    return (
-        <section id="about" className="container !pr-0 md:flex md:flex-row md:items-center md:py-32 relative md:h-screen">
-            <img
-                className="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 -z-10 w-full max-w-3xl"
-                src="/bewerktefoto2.png"
-                alt="foto van KMD"
-            />
+    // Refs
+    const imageContainer = useRef(null);
+    const imageRef = useRef(null);
+    const textContainer = useRef(null);
+    const textContent = useRef(null);
+    const titleRef = useRef(null);
+    
+    const [imageHeight, setImageHeight] = useState(0);
 
-            <div className="max-md:-mt-32">
-                <h2 className="text-xl font-bold mb-4">Over mij</h2>
-                <p className="text-[15px] md:max-w-[40ch] max-md:pr-8">
+    useEffect(() => {
+        if (imageRef.current) {
+            setImageHeight(imageRef.current.clientHeight);
+        }
+    }, []);
+
+    if (imageContainer.current) {
+        gsap.set(imageContainer.current, {
+            height: imageHeight,
+        });
+    }
+
+    useEffect(() => {
+        titleAnimation(titleRef.current);
+        aboutImageAnimation(imageContainer.current);
+        aboutTextAnimation(textContent.current);
+    }, []);
+
+    return (
+        <section
+            id="about"
+            className="overflow-hidden container !pr-0 md:flex md:flex-row md:items-center md:py-32 relative md:h-screen"
+        >
+            <div
+                className="overflow-hidden relative right-0 aspect-[3/2.2] md:absolute md:top-1/2 md:-translate-y-1/2 -z-10 w-full md:max-w-3xl"
+                ref={imageContainer}
+            >
+                <img
+                    className="size-full object-cover"
+                    src="/bewerktefoto2.png"
+                    ref={imageRef}
+                    alt="foto van KMD"
+                />
+            </div>
+
+            <div className="max-md:-mt-32" ref={textContainer}>
+                <h2 className="text-xl font-bold mb-4 overflow-hidden relative" ref={titleRef}>Over mij</h2>
+                <p className="text-[15px] md:max-w-[40ch] max-md:pr-8" ref={textContent}>
                     Ik ben Martina Doekharan, 2e jaars student Communication and
                     Multimedia Design aan de Hogeschool van Amsterdam. Mijn
                     passie ligt in het ontwikkelen van digitale producten die de
