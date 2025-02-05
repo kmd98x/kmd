@@ -7,8 +7,6 @@ import split from "../utils/split";
 export default function titleAnimation(title) {
     const theTitle = split(title)
 
-    console.log(theTitle)
-
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: title,
