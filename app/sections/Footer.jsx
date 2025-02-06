@@ -12,7 +12,6 @@ export default function Footer() {
     
                 <div className="flex items-center flex-wrap mt-5 gap-12 justify-center">
                     <a href="mailto:kmd98x@hotmail.com" className="text-[#fffdd0] flex flex-col items-center gap-1 mt-1">
-                        {/* <Envelope /> */}
                         <FontAwesomeIcon icon={faEnvelope} className="w-7" />
                         <h4 className="text-lg leading-none mt-2">Email</h4>
                         kmd98x@hotmail.com
