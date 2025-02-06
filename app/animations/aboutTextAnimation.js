@@ -19,8 +19,8 @@ export default function aboutTextAnimation(text) {
     gsap.to(text.children, {
         scrollTrigger: {
             trigger: text,
-            start: "top center",
-            end: "bottom center",
+            start: "top 70%",
+            end: "bottom 70%",
             scrub: true,
         },
         opacity: 1,

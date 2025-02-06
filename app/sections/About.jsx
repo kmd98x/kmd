@@ -57,7 +57,7 @@ export default function About() {
 
             <div className="max-md:-mt-32" ref={textContainer}>
                 <h2 className="text-xl font-bold mb-4 overflow-hidden relative" ref={titleRef}>Over mij</h2>
-                <p className="text-[15px] md:max-w-[40ch] max-md:pr-8" ref={textContent}>
+                <p className="text-[clamp(1rem,0.643rem_+_0.952vw,1.25rem)] md:max-w-[40ch] max-md:pr-8" ref={textContent}>
                     Ik ben Martina Doekharan, 2e jaars student Communication and
                     Multimedia Design aan de Hogeschool van Amsterdam. Mijn
                     passie ligt in het ontwikkelen van digitale producten die de

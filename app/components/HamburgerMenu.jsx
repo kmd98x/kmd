@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function hamburgermenu({ links, isOpen, setIsOpen }) {
+    const linkStyles = "text-[#FFFDD0] inline-block p-5";
+
     const scrollToSection = (e, sectionId) => {
         e.preventDefault();
 
@@ -24,7 +26,7 @@ export default function hamburgermenu({ links, isOpen, setIsOpen }) {
             <ul className="pt-10">
                 <li>
                     <a
-                        className="text-[#FFFDD0] inline-block p-5"
+                        className={linkStyles}
                         onClick={(e) => scrollToSection(e, "home")}
                         href="#home"
                     >
@@ -33,7 +35,7 @@ export default function hamburgermenu({ links, isOpen, setIsOpen }) {
                 </li>
                 <li>
                     <a
-                        className="text-[#FFFDD0] inline-block p-5"
+                        className={linkStyles}
                         onClick={(e) => scrollToSection(e, "about")}
                         href="#about"
                     >
@@ -42,7 +44,7 @@ export default function hamburgermenu({ links, isOpen, setIsOpen }) {
                 </li>
                 <li>
                     <a
-                        className="text-[#FFFDD0] inline-block p-5"
+                        className={linkStyles}
                         onClick={(e) => scrollToSection(e, "projects")}
                         href="#projects"
                     >
@@ -51,7 +53,7 @@ export default function hamburgermenu({ links, isOpen, setIsOpen }) {
                 </li>
                 <li>
                     <a
-                        className="text-[#FFFDD0] inline-block p-5"
+                        className={linkStyles}
                         onClick={(e) => scrollToSection(e, "footer")}
                         href="#footer"
                     >
