@@ -3,18 +3,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function projectsAnimation(container) {
+    const projects = gsap.utils.toArray(".project");
+    const projectWidth = projects[0].offsetWidth;
 
-    const containerWidth = container.offsetWidth;
-
-    gsap.to(container, {
-        xPercent: -(((containerWidth / window.innerWidth) * 100) + 34.5),
+    gsap.to(projects, {
+        xPercent: -100 * (projects.length - 1) + (projectWidth - 48),
         ease: "none",
         scrollTrigger: {
             trigger: container,
             start: "center center",
-            end: `${containerWidth}px`,
             pin: true,
-            scrub: 0.1,
+            scrub: 1,
         }
     });
 }
