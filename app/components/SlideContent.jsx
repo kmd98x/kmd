@@ -7,7 +7,7 @@ export default function SlideContent({ image, title, text, link }) {
                 <a
                     href={link}
                     target="_blank"
-                    className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5"
+                    className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group"
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <img
@@ -21,7 +21,7 @@ export default function SlideContent({ image, title, text, link }) {
                         <h3 className="font-bold">{title}</h3>
                         <p className="text-sm max-w-[40ch]">{text}</p>
 
-                        <span className="inline-block border border-[#fffdd0]/50 rounded-lg px-2 py-1 mt-2">Bekijk project</span>
+                        <span className="inline-block border border-[#fffdd0]/50 rounded-lg px-2 py-1 mt-2 transition-all duration-300 group-hover:shadow-[0_0_10px_rgba(248,241,72,0.15)]">Bekijk project</span>
                     </div>
                 </a>
             ) : (

@@ -7,6 +7,8 @@ export default function Footer() {
     return (
         <footer id="footer" className="container pb-12 flex items-center">
             <div className="w-full">
+                <span className="inline-block w-full h-px bg-[#fffdd0]/30 mb-5"></span>
+
                 <h2 className="text-xl text-center font-bold mb-4">Neem contact op</h2>
                 <p className="max-w-[58ch] text-center mx-auto">Geïnteresseerd in mijn werk? Neem gerust contact op via het onderstaande e-mail adres of telefoonnummer.</p>
     
