@@ -1,8 +1,7 @@
 import React from "react";
-import LinkedIn from "../components/icons/LinkedIn";
-import Instagram from "../components/icons/Instagram";
-import WhatsApp from "../components/icons/WhatsApp";
-import Envelope from "../components/icons/Envelope";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faLinkedinIn, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
     return (
@@ -13,21 +12,26 @@ export default function Footer() {
     
                 <div className="flex items-center flex-wrap mt-5 gap-12 justify-center">
                     <a href="mailto:kmd98x@hotmail.com" className="text-[#fffdd0] flex flex-col items-center gap-1 mt-1">
-                        <Envelope />
+                        {/* <Envelope /> */}
+                        <FontAwesomeIcon icon={faEnvelope} className="w-7" />
                         <h4 className="text-lg leading-none mt-2">Email</h4>
                         kmd98x@hotmail.com
                     </a>
                     
                     <a href="https://wa.me/620847475" className="text-[#fffdd0] flex flex-col items-center gap-1 mt-1">
-                        <WhatsApp />
+                        <FontAwesomeIcon icon={faWhatsapp} className="w-7" />
                         <h4 className="text-lg leading-none mt-2">WhatsApp</h4>
                         +31 6 20847475
                     </a>
                 </div>
                 
                 <div className="flex justify-center items-center gap-5 text-[#fffdd0] mt-10">
-                    <a href="https://linkedin.com/in/kmd98"><LinkedIn /></a>
-                    <a href="https://instagram.com/kmd98.x"><Instagram /></a>
+                    <a href="https://linkedin.com/in/kmd98">
+                        <FontAwesomeIcon icon={faLinkedinIn} className="w-5" />
+                    </a>
+                    <a href="https://instagram.com/kmd98.x">
+                        <FontAwesomeIcon icon={faInstagram} className="w-5" />
+                    </a>
                 </div>
             </div>
         </footer>

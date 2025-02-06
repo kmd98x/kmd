@@ -3,9 +3,9 @@ import React from "react";
 export default function WhatsApp() {
     return (
         <svg
-            width="27"
-            height="27"
-            viewBox="0 0 27 27"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"s
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
@@ -17,7 +17,7 @@ export default function WhatsApp() {
             </g>
             <defs>
                 <clipPath id="clip0_38_8">
-                    <rect width="27" height="27" fill="white" />
+                    <rect width="20" height="20" fill="white" />
                 </clipPath>
             </defs>
         </svg>
