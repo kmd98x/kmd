@@ -27,10 +27,10 @@ export default function Footer() {
                 </div>
                 
                 <div className="flex justify-center items-center gap-5 text-[#fffdd0] mt-10">
-                    <a href="https://linkedin.com/in/kmd98">
+                    <a href="https://linkedin.com/in/kmd98" target="_blank">
                         <FontAwesomeIcon icon={faLinkedinIn} className="w-5" />
                     </a>
-                    <a href="https://instagram.com/kmd98.x">
+                    <a href="https://instagram.com/kmd98.x" target="_blank">
                         <FontAwesomeIcon icon={faInstagram} className="w-5" />
                     </a>
                 </div>
