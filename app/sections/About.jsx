@@ -17,7 +17,7 @@ export default function About() {
     const textContainer = useRef(null);
     const textContent = useRef(null);
     const titleRef = useRef(null);
-    
+
     const [imageHeight, setImageHeight] = useState(0);
 
     useEffect(() => {
@@ -56,14 +56,10 @@ export default function About() {
             </div>
 
             <div className="max-md:-mt-32" ref={textContainer}>
-                <h2 className="text-xl font-bold mb-4 overflow-hidden relative" ref={titleRef}>Over mij</h2>
+                <h2 className="text-5xl mb-4 overflow-hidden relative" ref={titleRef}>Over mij</h2>
                 <p className="text-[clamp(1rem,0.643rem_+_0.952vw,1.25rem)] md:max-w-[40ch] max-md:pr-8" ref={textContent}>
-                    Ik ben Martina Doekharan, 2e jaars student Communication and
-                    Multimedia Design aan de Hogeschool van Amsterdam. Mijn
-                    passie ligt in het ontwikkelen van digitale producten die de
-                    gebruikerservaring verbeteren. Binnen mijn studie focus ik
-                    me op UX-design, een vakgebied dat mij zowel creatief als
-                    technisch uitdaagt.
+                    Ik ben Martina Doekharan, 3e jaars student Communication and Multimedia Design aan de Hogeschool van Amsterdam. Mijn focus ligt op visual design. Het creëren van digitale producten die niet alleen functioneel zijn, maar ook visueel overtuigen en gebruikers raken.
+                    Momenteel volg ik mijn 2e minor Visual Interface Design, waar ik mijn vaardigheden in compositie, typografie en visuele hiërarchie verder ontwikkel. Het mooiste vind ik wanneer design niet alleen goed werkt, maar ook impact maakt. Daar wil ik me tijdens mijn stage op richten.
                 </p>
             </div>
         </section>

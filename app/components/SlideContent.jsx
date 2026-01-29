@@ -11,14 +11,14 @@ export default function SlideContent({ image, title, text, link }) {
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <img
-                            src={`/projects/${image}`}
+                            src={image.startsWith("new-projects/") ? `/${image}` : `/projects/${image}`}
                             className="size-full object-contain absolute"
                             alt="Laptop"
                         />
                     </div>
 
                     <div>
-                        <h3 className="font-bold">{title}</h3>
+                        <h3 className="project-title">{title}</h3>
                         <p className="text-sm max-w-[40ch]">{text}</p>
 
                         <span className="inline-block border border-[#fffdd0]/50 rounded-lg px-2 py-1 mt-2 transition-all duration-300 group-hover:shadow-[0_0_10px_rgba(248,241,72,0.15)]">Bekijk project</span>
@@ -28,14 +28,14 @@ export default function SlideContent({ image, title, text, link }) {
                 <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5">
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <img
-                            src={`/projects/${image}`}
+                            src={image.startsWith("new-projects/") ? `/${image}` : `/projects/${image}`}
                             className="size-full object-contain absolute px-5"
                             alt="Laptop"
                         />
                     </div>
 
                     <div>
-                        <h3 className="font-bold">{title}</h3>
+                        <h3 className="project-title">{title}</h3>
                         <p className="text-sm">{text}</p>
                     </div>
                 </div>

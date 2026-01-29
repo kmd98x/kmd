@@ -1,0 +1,100 @@
+[
+    {
+        "year": "jaar 1",
+        "image": "new-projects/year-1/boekenzoeker.png",
+        "title": "Boekenzoeker",
+        "text": "Een app voor de Gemeente Amsterdam waarmee kinderen van 12-17 jaar makkelijk boeken kunnen vinden.",
+        "link": ""
+    },
+    {
+        "year": "jaar 1",
+        "image": "new-projects/year-1/dbb.png",
+        "title": "DBB",
+        "text": "Een app die mensen helpt bewuster om te gaan met duurzaamheid.",
+        "link": ""
+    },
+    {
+        "year": "jaar 1",
+        "image": "new-projects/year-1/eu-tribe.png",
+        "title": "EU-tribe",
+        "text": "Een app waarmee reisliefhebbers samen kunnen reizen.",
+        "link": ""
+    },
+    {
+        "year": "jaar 1",
+        "image": "new-projects/year-1/hema-cupcakes.png",
+        "title": "Hema cupcakes",
+        "text": "Voor een schoolproject maakte ik een webpagina voor HEMA, waar klanten gepersonaliseerde cupcakes kunnen ontwerpen en bestellen.",
+        "link": ""
+    },
+    {
+        "year": "jaar 1",
+        "image": "new-projects/year-1/mijn-favoriete-geurtjes.png",
+        "title": "Mijn favoriete geurtjes",
+        "text": "De eerste website die ik heb gebouwd met HTML en CSS.",
+        "link": ""
+    },
+    {
+        "year": "jaar 1",
+        "image": "new-projects/year-1/synergy.png",
+        "title": "Synergy",
+        "text": "Een app voor sportliefhebbers om workouts te vinden.",
+        "link": ""
+    },
+    {
+        "year": "jaar 2",
+        "image": "new-projects/year-2/1e portfolio.png",
+        "title": "1e portfolio",
+        "text": "",
+        "link": ""
+    },
+    {
+        "year": "jaar 2",
+        "image": "new-projects/year-2/bijenkorf.png",
+        "title": "Bijenkorf",
+        "text": "",
+        "link": ""
+    },
+    {
+        "year": "jaar 2",
+        "image": "new-projects/year-2/gemeente rotterdam.png",
+        "title": "Gemeente Rotterdam",
+        "text": "",
+        "link": ""
+    },
+    {
+        "year": "jaar 2",
+        "image": "new-projects/year-2/hangman.png",
+        "title": "Hangman",
+        "text": "",
+        "link": ""
+    },
+    {
+        "year": "jaar 2",
+        "image": "new-projects/year-2/kmd webshop.png",
+        "title": "KMD webshop",
+        "text": "",
+        "link": ""
+    },
+    {
+        "year": "jaar 2",
+        "image": "new-projects/year-2/stage FW.png",
+        "title": "Stage FW",
+        "text": "",
+        "link": ""
+    },
+    {
+        "year": "jaar 2",
+        "image": "new-projects/year-2/vibes.png",
+        "title": "Vibes",
+        "text": "",
+        "link": ""
+    },
+    {
+        "year": "jaar 3",
+        "image": "new-projects/year-3/minor.png",
+        "title": "Minor",
+        "text": "",
+        "link": ""
+    }
+]
