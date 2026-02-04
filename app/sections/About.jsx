@@ -61,13 +61,9 @@ export default function About() {
 
             <div className="max-md:-mt-32" ref={textContainer}>
                 <h2 className="relative text-montez" ref={titleRef}>Over mij</h2>
-                <p className="text-[clamp(1rem,0.643rem_+_0.952vw,1.25rem)] md:max-w-[40ch] max-md:pr-8" ref={textContent}>
-                    Ik ben Martina Doekharan, 2e jaars student Communication and
-                    Multimedia Design aan de Hogeschool van Amsterdam. Mijn
-                    passie ligt in het ontwikkelen van digitale producten die de
-                    gebruikerservaring verbeteren. Binnen mijn studie focus ik
-                    me op UX-design, een vakgebied dat mij zowel creatief als
-                    technisch uitdaagt.
+                <p className="text-[clamp(1rem,0.643rem_+_0.952vw,1.25rem)] md:max-w-[60ch] max-md:pr-8" ref={textContent}>
+                Ik ben Martina Doekharan, 3ᵉ jaars student Communication and Multimedia Design aan de Hogeschool van Amsterdam en ben afkomstig uit Suriname. Mijn focus ligt op visual design. Het creëren van digitale producten die niet alleen functioneel zijn, maar ook visueel overtuigen en gebruikers raken.
+                Momenteel volg ik mijn 2e minor Visual Interface Design, waar ik mijn vaardigheden in compositie, typografie en visuele hiërarchie verder ontwikkel. Het mooiste vind ik wanneer design niet alleen goed werkt, maar ook impact maakt. Daar wil ik me tijdens mijn stage op richten.
                 </p>
             </div>
         </section>
