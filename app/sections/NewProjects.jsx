@@ -69,12 +69,16 @@ export default function NewProjects() {
                     style={{ perspective: "1600px" }}
                 >
                     <div
-                        ref={wheelRef}
-                        className="absolute inset-0 flex items-start justify-center"
-                        style={{
-                            transformStyle: "preserve-3d",
-                        }}
+                        className="absolute inset-0 flex items-start justify-center origin-center"
+                        style={{ transform: "rotateX(18deg) scale(0.9)", transformStyle: "preserve-3d" }}
                     >
+                        <div
+                            ref={wheelRef}
+                            className="absolute inset-0 flex items-start justify-center"
+                            style={{
+                                transformStyle: "preserve-3d",
+                            }}
+                        >
                         {sortedProjects.map((project, index) => {
                             const angle = index * angleStep;
                             const showYear = isFirstOfYear(sortedProjects, index);
@@ -110,6 +114,7 @@ export default function NewProjects() {
                                 </div>
                             );
                         })}
+                        </div>
                     </div>
                 </div>
             </div>
