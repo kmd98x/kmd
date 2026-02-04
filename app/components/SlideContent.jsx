@@ -18,8 +18,8 @@ export default function SlideContent({ image, title, text, link }) {
                     </div>
 
                     <div>
-                        <h3 className="font-bold">{title}</h3>
-                        <p className="text-sm max-w-[40ch]">{text}</p>
+                        <h3 className="font-bold text-xl mb-1">{title}</h3>
+                        <p className="max-w-[40ch]">{text}</p>
 
                         <span className="inline-block border border-[#fffdd0]/50 rounded-lg px-2 py-1 mt-2 transition-all duration-300 group-hover:shadow-[0_0_10px_rgba(248,241,72,0.15)]">Bekijk project</span>
                     </div>
@@ -35,8 +35,8 @@ export default function SlideContent({ image, title, text, link }) {
                     </div>
 
                     <div>
-                        <h3 className="font-bold">{title}</h3>
-                        <p className="text-sm">{text}</p>
+                        <h3 className="font-bold text-xl mb-1">{title}</h3>
+                        <p className="max-w-[40ch]">{text}</p>
                     </div>
                 </div>
             )}

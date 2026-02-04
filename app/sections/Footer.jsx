@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="w-full">
                 <span className="inline-block w-full h-px bg-[#fffdd0]/30 mb-5"></span>
 
-                <h2 className="text-xl text-center font-bold mb-4">Neem contact op</h2>
+                <h2 className="relative text-montez text-center mb-4">Neem contact op</h2>
                 <p className="max-w-[58ch] text-center mx-auto">Geïnteresseerd in mijn werk? Neem gerust contact op via het onderstaande e-mail adres of telefoonnummer.</p>
     
                 <div className="flex items-center flex-wrap mt-5 gap-12 justify-center">

@@ -1,8 +1,23 @@
-import { Alegreya_Sans, Alegreya_Sans_SC } from "next/font/google";
+import { Alegreya_Sans, Alegreya_Sans_SC, Montez } from "next/font/google";
 import "./globals.css";
 
-const AlegreyaSans = Alegreya_Sans({ subsets: ["latin"], weight: "400" });
-const AlegreyaSansSC = Alegreya_Sans_SC({ subsets: ["latin"], weight: "400" });
+const AlegreyaSans = Alegreya_Sans({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--font-alegreya-sans",
+});
+
+const AlegreyaSansSC = Alegreya_Sans_SC({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--font-alegreya-sans-sc",
+});
+
+const MontezFont = Montez({
+	subsets: ["latin"],
+	weight: "400",
+	variable: "--font-montez",
+});
 
 export const metadata = {
 	title: "Martina Doekharan",
@@ -13,7 +28,7 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body
-				className={`${AlegreyaSans.variable} ${AlegreyaSansSC.variable} antialiased`}
+				className={`${AlegreyaSans.variable} ${AlegreyaSansSC.variable} ${MontezFont.variable} antialiased`}
 			>
 				{children}
 			</body>
