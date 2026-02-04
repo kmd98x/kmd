@@ -1,6 +1,7 @@
 "use client"
 import React from "react";
 import HamburgerMenu from "../components/HamburgerMenu";
+import Image from "next/image";
 
 export default function Header() {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -21,7 +22,9 @@ export default function Header() {
             </div>
 
             <div className="my-auto">
-                <img
+                <Image
+                    width={480}
+                    height={133}
                     className="mx-auto inline-block h-auto translate-y-[50px] w-[clamp(13.5rem,-24.375rem_+_101vw,30rem)]"
                     src="/logo-desktop.svg"
                     alt="logo"

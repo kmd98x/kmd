@@ -5,6 +5,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import Image from "next/image";
+
 // Animations
 import aboutImageAnimation from "../animations/aboutImageAnimation";
 import titleAnimation from "../animations/titleAnimation";
@@ -47,7 +49,9 @@ export default function About() {
                 className="overflow-hidden relative right-0 aspect-[3/2.2] md:absolute md:top-1/2 md:-translate-y-1/2 -z-10 w-full md:max-w-3xl"
                 ref={imageContainer}
             >
-                <img
+                <Image
+                    width={768}
+                    height={563}
                     className="size-full object-cover"
                     src="/bewerktefoto2.png"
                     ref={imageRef}

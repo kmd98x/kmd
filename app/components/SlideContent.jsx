@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function SlideContent({ image, title, text, link }) {
     return (
@@ -10,7 +11,9 @@ export default function SlideContent({ image, title, text, link }) {
                     className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group"
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
-                        <img
+                        <Image
+                            width={326}
+                            height={290}
                             src={`/projects/${image}`}
                             className="size-full object-contain absolute"
                             alt="Laptop"
@@ -27,7 +30,9 @@ export default function SlideContent({ image, title, text, link }) {
             ) : (
                 <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5">
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
-                        <img
+                        <Image
+                            width={326}
+                            height={290}
                             src={`/projects/${image}`}
                             className="size-full object-contain absolute px-5"
                             alt="Laptop"
