@@ -8,7 +8,7 @@ export default function SlideContent({ image, title, text, link }) {
                 <a
                     href={link}
                     target="_blank"
-                    className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group"
+                    className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)]"
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <Image
@@ -28,7 +28,7 @@ export default function SlideContent({ image, title, text, link }) {
                     </div>
                 </a>
             ) : (
-                <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5">
+                <div className="flex flex-col items-stretch justify-between h-full rounded-md border border-white/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)]">
                     <div className="w-full aspect-[4/4] overflow-hidden relative">
                         <Image
                             width={326}
