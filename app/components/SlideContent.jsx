@@ -1,13 +1,18 @@
 import React from "react";
 import Image from "next/image";
 
-export default function SlideContent({ image, title, text, link }) {
+export default function SlideContent({ image, title, text, link, slug, category, showCategory }) {
     return (
-        <div className="project flex-shrink-0 w-[clamp(18rem,14.429rem_+_9.524vw,23rem)] aspect-[4/5.5]">
-            {link ? (
+        <div className="project relative -mt-2 flex-shrink-0 w-[clamp(18rem,14.429rem_+_9.524vw,23rem)] aspect-[4/5.5]">
+            {showCategory && category && (
+                <span className="absolute -top-10 left-0 text-lg font-semibold tracking-wide uppercase text-[#fffdd0]/80">
+                    {category}
+                </span>
+            )}
+
+            {slug ? (
                 <a
-                    href={link}
-                    target="_blank"
+                    href={`project/${slug}`}
                     className="flex flex-col items-stretch justify-center gap-12 h-full rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)]"
                 >
                     <div className="w-full aspect-[4/4] overflow-hidden relative">

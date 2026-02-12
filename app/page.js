@@ -1,7 +1,7 @@
-import About from "@/app/sections/About";
-import Footer from "@/app/sections/Footer";
-import Header from "@/app/sections/Header";
-import Projects from "@/app/sections/Projects";
+import Header from "./sections/Header";
+import About from "./sections/About";
+import Projects from "./sections/Projects";
+import Footer from "./sections/Footer";
 
 export default function Home() {
 	return (

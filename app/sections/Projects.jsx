@@ -22,9 +22,27 @@ export default function Projects() {
     
                 <div className="px-5">
                     <div className="flex gap-8 flex-nowrap" ref={container}>
-                        {projects.map((project, index) => (
-                            <SlideContent key={index} {...project} />
-                        ))}
+                        {(() => {
+                            const seenCategories = new Set();
+
+                            return projects.map((project, index) => {
+                                const category = project.category ?? project.year;
+                                const isFirstOfCategory = category && !seenCategories.has(category);
+
+                                if (isFirstOfCategory) {
+                                    seenCategories.add(category);
+                                }
+
+                                return (
+                                    <SlideContent
+                                        key={index}
+                                        {...project}
+                                        category={category}
+                                        showCategory={isFirstOfCategory}
+                                    />
+                                );
+                            });
+                        })()}
                     </div>
                 </div>
             </div>
