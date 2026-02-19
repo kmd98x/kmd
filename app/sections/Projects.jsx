@@ -15,8 +15,8 @@ export default function Projects() {
 
     return (
         <section className="overflow-hidden grid grid-cols-1 items-center py-16" id="projects">
-            <div className="my-auto">
-                <div className="container mb-8">
+            <div className="my-auto container">
+                <div className="mb-8">
                     <h2 className="relative text-montez">Mijn projecten</h2>
                 </div>
     

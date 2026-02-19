@@ -10,6 +10,10 @@ export default async function ProjectPage({ params }) {
     }
 
     return (
-        <ProjectSections sections={project.sections ?? []} />
+        <div className="h-screen overflow-hidden">
+            <ProjectSections
+                sections={project.sections ?? { left: [], right: [] }}
+            />
+        </div>
     );
 }
