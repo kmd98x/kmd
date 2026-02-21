@@ -1,98 +1,46 @@
 [
     {
         "id": 1,
-        "year": "extra",
-        "image": "extra/tropical-divas.png",
-        "thumbnail": "thumbnails/tropical-divas.svg",
-        "title": "Tropical Divas",
-        "text": "Ik heb een stage bij FW gedaan, waar ik designs heb gemaakt voor hun website."
+        "year": "jaar 1",
+        "image": "jaar-1/synergy.png",
+        "thumbnail": "thumbnails/synergy.svg",
+        "title": "Synergy app",
+        "text": "Een mobiele app voor sportliefhebbers. Je kiest een workout, ziet hoeveel calorieën je verbrand hebt en houdt bij op welke dagen je gesport hebt. De focus lag op de competentie prototypen en uitwerken."
     },
     {
         "id": 2,
-        "year": "jaar 3",
-        "image": "jaar-3/minor.png",
-        "thumbnail": "thumbnails/minor.svg",
-        "title": "Monir",
-        "text": "Mijn minor Behaviour Design resulteerde in dit project waar ik het meest trots op ben: een digitaal bordspel voor jonge professionals en trainees. Het spel helpt spelers bewuster te worden van patronen en overtuigingen die hen belemmeren om zichzelf volledig te zijn.",
-        "linkText": "Bezoek het spel",
-        "link": "https://kmd-minorbd-omnient.vercel.app/"
+        "year": "jaar 1",
+        "image": "jaar-1/boekenzoeker.png",
+        "thumbnail": "thumbnails/boekenzoeker.svg",
+        "title": "Boekenzoeker",
+        "text": "Voor het vak Visual Interface Design: een app waarmee jongeren van 12-17 jaar makkelijk een boek kunnen zoeken via de Gemeente Amsterdam. De speelse doelgroep was een interessante uitdaging waarbij meerdere design iteraties zijn gemaakt."
     },
     {
         "id": 3,
-        "year": "jaar 2",
-        "image": "jaar-2/stage-fw.png",
-        "thumbnail": "thumbnails/stage-fw.svg",
-        "title": "Stage FW",
-        "text": "Tijdens mijn korte stage bij Frankwatching heb ik meerdere projecten gedaan. Dit is er 1 van: een notitieboek dat fysiek is uitgeprint en uitgedeeld."
+        "year": "jaar 1",
+        "image": "jaar-1/eu-tribe.png",
+        "thumbnail": "thumbnails/eu-tribe.svg",
+        "title": "EU Tribe",
+        "text": "Een app om mensen online te leren kennen die dezelfde reisbestemming hebben. Deel foto's van plekken, lees ervaringen en eetplekken, en zie wie er ook naartoe reist. Voor extra veiligheid wordt een paspoort scan vereist bij het boeken van een reis."
     },
     {
         "id": 4,
-        "year": "jaar 2",
-        "image": "jaar-2/eerste-portfolio.png",
-        "thumbnail": "thumbnails/eerste-portfolio.svg",
-        "title": "Mijn eerste portfolio",
-        "text": "Gemaakt ter voorbereiding op mijn korte stage in jaar 2. Dit is mijn allereerste portfolio website, gebouwd met HTML en CSS."
+        "year": "jaar 1",
+        "image": "jaar-1/dbb.png",
+        "thumbnail": "thumbnails/dbb.svg",
+        "title": "DBB",
+        "text": "Een mobiele app die mensen bewuster maakt van duurzaamheid rondom composteren. Je vindt informatie over de organisatie, kunt een composteerplek reserveren en meedoen. Ontworpen in Figma en vervolgens gebouwd met HTML en CSS."
     },
     {
         "id": 5,
-        "year": "jaar 2",
-        "image": "jaar-2/bijenkorf.png",
-        "thumbnail": "thumbnails/bijenkorf.svg",
-        "title": "Bijenkorf",
-        "text": "Voor het vak Frontend Development moest ik een bestaande website opnieuw maken met eigen code. Ik heb de Bijenkorf website gekozen.",
-        "linkText": "Zie website",
-        "link": "https://kmd98x.github.io/FvD/"
+        "year": "jaar 1",
+        "image": "jaar-1/hema-cupcakes.png",
+        "thumbnail": "thumbnails/hema-cupcakes.svg",
+        "title": "Cupcake maker",
+        "text": "Een app voor de HEMA waarbij klanten cupcakes zelf kunnen decoreren en hun bezorgtijd kunnen instellen. Het project bestond uit het uitwerken van schermen in Adobe Illustrator."
     },
     {
         "id": 6,
-        "year": "jaar 2",
-        "image": "jaar-2/vibes.png",
-        "thumbnail": "thumbnails/vibes.svg",
-        "title": "Vibes",
-        "text": "Een app om afspraken te maken met mensen in de buurt of feestjes te ontdekken. Je ziet de route, kunt aangeven of je erbij bent en chatten met andere gebruikers. Uitgewerkt als hi-fi schermen zonder werkend prototype.",
-        "linkText": "bekijk Figma bestand",
-        "link": "https://www.figma.com/design/3kJLYgZesWPMcYRpoywOVt/J2B2-Responsive-Multi-Device-Design?node-id=0-1&p=f&t=VNy3VrHmMxYF6tH5-0"
-    },
-    {
-        "id": 7,
-        "year": "jaar 2",
-        "image": "jaar-2/hangman.png",
-        "thumbnail": "thumbnails/hangman.svg",
-        "title": "Hangman",
-        "text": "Een desktopversie van het hangman spel als kennismaking met JavaScript.",
-        "linkText": "Bezoek het spel",
-        "link": "https://kmd98x.github.io/finalhangman/"
-    },
-    {
-        "id": 8,
-        "year": "jaar 2",
-        "image": "jaar-2/gemeente-rotterdam.png",
-        "thumbnail": "thumbnails/gemeente-rotterdam.svg",
-        "title": "Gemeente Rotterdam",
-        "text": "Een one-page website voor een jazzevenement van Gemeente Rotterdam. Uitdaging: eigen visuele stijlelementen toevoegen voor de muziekbeleving, terwijl de herkenbaarheid van de gemeente behouden blijft. Uitgewerkt voor mobiel, mid screen en large screen met het officiële design systeem.",
-        "linkText": "bekijk Figma bestand",
-        "link": "https://www.figma.com/design/Rku4wjORD58t7ejFLqMKTi/J2-B2-Vormgeving-2?t=ayqKWln3onrceJ7P-0"
-    },
-    {
-        "id": 9,
-        "year": "jaar 2",
-        "image": "jaar-2/capibara.png",
-        "thumbnail": "thumbnails/capibara.svg",
-        "title": "Capibara",
-        "text": "Een project rondom interactie, afgerond met een fysiek bordspel. Het thema: capibara's."
-    },
-    {
-        "id": 10,
-        "year": "jaar 2",
-        "image": "jaar-2/kmd-webshop.png",
-        "thumbnail": "thumbnails/kmd-webshop.svg",
-        "title": "KMD Webshop",
-        "text": "Een app waarbij je kleding online bestelt en digitaal past op je eigen lichaam. Zo weet je van tevoren of het past — goed voor duurzaamheid en gemak. Naast de app is ook een dashboard ontworpen. Bij dit project  moest ik alleen schermen maken.",
-        "linkText": "bekijk Figma bestand",
-        "link": "https://www.figma.com/design/PRjTLiMiPhZ6s2tnjB4k77/J2-B1-Content-Delivery-inleveren-8.4?node-id=1-420&t=VNy3VrHmMxYF6tH5-0"
-    },
-    {
-        "id": 11,
         "year": "jaar 1",
         "image": "jaar-1/mijn-favoriete-geurtjes.png",
         "thumbnail": "thumbnails/mijn-favoriete-geurtjes.svg",
@@ -102,43 +50,95 @@
         "link": "https://kmd98x.github.io/kmdportfolio/index.html"
     },
     {
+        "id": 7,
+        "year": "jaar 2",
+        "image": "jaar-2/kmd-webshop.png",
+        "thumbnail": "thumbnails/kmd-webshop.svg",
+        "title": "KMD Webshop",
+        "text": "Een app waarbij je kleding online bestelt en digitaal past op je eigen lichaam. Zo weet je van tevoren of het past. Goed voor duurzaamheid en gemak. Naast de app is ook een dashboard ontworpen. Bij dit project  moest ik alleen schermen maken.",
+        "linkText": "bekijk Figma bestand",
+        "link": "https://www.figma.com/design/PRjTLiMiPhZ6s2tnjB4k77/J2-B1-Content-Delivery-inleveren-8.4?node-id=1-420&t=VNy3VrHmMxYF6tH5-0"
+    },
+    {
+        "id": 8,
+        "year": "jaar 2",
+        "image": "jaar-2/capibara.png",
+        "thumbnail": "thumbnails/capibara.svg",
+        "title": "Capibara",
+        "text": "Een project rondom interactie, afgerond met een fysiek bordspel. Het thema: capibara's."
+    },
+    {
+        "id": 9,
+        "year": "jaar 2",
+        "image": "jaar-2/gemeente-rotterdam.png",
+        "thumbnail": "thumbnails/gemeente-rotterdam.svg",
+        "title": "Gemeente Rotterdam",
+        "text": "Een one-page website voor een jazzevenement van Gemeente Rotterdam. Uitdaging: eigen visuele stijlelementen toevoegen voor de muziekbeleving, terwijl de herkenbaarheid van de gemeente behouden blijft. Uitgewerkt voor mobiel, mid screen en large screen met het officiële design systeem.",
+        "linkText": "bekijk Figma bestand",
+        "link": "https://www.figma.com/design/Rku4wjORD58t7ejFLqMKTi/J2-B2-Vormgeving-2?t=ayqKWln3onrceJ7P-0"
+    },
+    {
+        "id": 10,
+        "year": "jaar 2",
+        "image": "jaar-2/hangman.png",
+        "thumbnail": "thumbnails/hangman.svg",
+        "title": "Hangman",
+        "text": "Een desktopversie van het hangman spel als kennismaking met JavaScript.",
+        "linkText": "Bezoek het spel",
+        "link": "https://kmd98x.github.io/finalhangman/"
+    },
+    {
+        "id": 11,
+        "year": "jaar 2",
+        "image": "jaar-2/vibes.png",
+        "thumbnail": "thumbnails/vibes.svg",
+        "title": "Vibes",
+        "text": "Een app om afspraken te maken met mensen in de buurt of feestjes te ontdekken. Je ziet de route, kunt aangeven of je erbij bent en chatten met andere gebruikers. Uitgewerkt als hi-fi schermen zonder werkend prototype.",
+        "linkText": "bekijk Figma bestand",
+        "link": "https://www.figma.com/design/3kJLYgZesWPMcYRpoywOVt/J2B2-Responsive-Multi-Device-Design?node-id=0-1&p=f&t=VNy3VrHmMxYF6tH5-0"
+    },
+    {
         "id": 12,
-        "year": "jaar 1",
-        "image": "jaar-1/hema-cupcakes.png",
-        "thumbnail": "thumbnails/hema-cupcakes.svg",
-        "title": "Cupcake maker",
-        "text": "Een app voor de HEMA waarbij klanten cupcakes zelf kunnen decoreren en hun bezorgtijd kunnen instellen. Het project bestond uit het uitwerken van schermen in Adobe Illustrator."
+        "year": "jaar 2",
+        "image": "jaar-2/bijenkorf.png",
+        "thumbnail": "thumbnails/bijenkorf.svg",
+        "title": "Bijenkorf",
+        "text": "Voor het vak Frontend Development moest ik een bestaande website opnieuw maken met eigen code. Ik heb de Bijenkorf website gekozen.",
+        "linkText": "Zie website",
+        "link": "https://kmd98x.github.io/FvD/"
     },
     {
         "id": 13,
-        "year": "jaar 1",
-        "image": "jaar-1/dbb.png",
-        "thumbnail": "thumbnails/dbb.svg",
-        "title": "DBB",
-        "text": "Een mobiele app die mensen bewuster maakt van duurzaamheid rondom composteren. Je vindt informatie over de organisatie, kunt een composteerplek reserveren en meedoen. Ontworpen in Figma en vervolgens gebouwd met HTML en CSS."
+        "year": "jaar 2",
+        "image": "jaar-2/eerste-portfolio.png",
+        "thumbnail": "thumbnails/eerste-portfolio.svg",
+        "title": "Mijn eerste portfolio",
+        "text": "Gemaakt ter voorbereiding op mijn korte stage in jaar 2. Dit is mijn allereerste portfolio website, gebouwd met HTML en CSS."
     },
     {
         "id": 14,
-        "year": "jaar 1",
-        "image": "jaar-1/eu-tribe.png",
-        "thumbnail": "thumbnails/eu-tribe.svg",
-        "title": "EU Tribe",
-        "text": "Een app om mensen online te leren kennen die dezelfde reisbestemming hebben. Deel foto's van plekken, lees ervaringen en eetplekken, en zie wie er ook naartoe reist. Voor extra veiligheid wordt een paspoort scan vereist bij het boeken van een reis."
+        "year": "jaar 2",
+        "image": "jaar-2/stage-fw.png",
+        "thumbnail": "thumbnails/stage-fw.svg",
+        "title": "Stage Frankwatching",
+        "text": "Tijdens mijn korte stage bij Frankwatching heb ik meerdere projecten gedaan. Dit is er 1 van: een notitieboek dat fysiek is uitgeprint en uitgedeeld."
     },
     {
         "id": 15,
-        "year": "jaar 1",
-        "image": "jaar-1/boekenzoeker.png",
-        "thumbnail": "thumbnails/boekenzoeker.svg",
-        "title": "Boekenzoeker",
-        "text": "Voor het vak Visual Interface Design: een app waarmee jongeren van 12-17 jaar makkelijk een boek kunnen zoeken via de Gemeente Amsterdam. De speelse doelgroep was een interessante uitdaging waarbij meerdere design iteraties zijn gemaakt."
+        "year": "jaar 3",
+        "image": "jaar-3/minor.png",
+        "thumbnail": "thumbnails/minor.svg",
+        "title": "Minor",
+        "text": "Mijn minor Behaviour Design resulteerde in dit project waar ik het meest trots op ben: een digitaal bordspel voor jonge professionals en trainees. Het spel helpt spelers bewuster te worden van patronen en overtuigingen die hen belemmeren om zichzelf volledig te zijn.",
+        "linkText": "Bezoek het spel",
+        "link": "https://kmd-minorbd-omnient.vercel.app/"
     },
     {
         "id": 16,
-        "year": "jaar 1",
-        "image": "jaar-1/synergy.png",
-        "thumbnail": "thumbnails/synergy.svg",
-        "title": "Synergy app",
-        "text": "Een mobiele app voor sportliefhebbers. Je kiest een workout, ziet hoeveel calorieën je verbrand hebt en houdt bij op welke dagen je gesport hebt. De focus lag op de competentie prototypen en uitwerken."
+        "year": "extra",
+        "image": "extra/tropical-divas.png",
+        "thumbnail": "thumbnails/tropical-divas.svg",
+        "title": "Tropical Divas",
+        "text": "Ik heb een stage bij FW gedaan, waar ik designs heb gemaakt voor hun website."
     }
 ]

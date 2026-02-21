@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS_COUNT = projects.length;
 const STEPS = PROJECTS_COUNT - 1;
-const SCROLL_HEIGHT_VH = PROJECTS_COUNT * 9;
+const SCROLL_HEIGHT_VH = PROJECTS_COUNT * 7;
 
 export default function ProjectsSection() {
     const [activeIndex, setActiveIndex] = useState(PROJECTS_COUNT - 1);
@@ -33,12 +33,12 @@ export default function ProjectsSection() {
                 end: `+=${SCROLL_HEIGHT_VH}vh`,
                 pin: pin,
                 pinSpacing: true,
-                scrub: 0.3,
+                scrub: 3,
                 snap: {
                     snapTo: 1 / STEPS,
-                    duration: { min: 0.25, max: 0.6 },
-                    delay: 0.1,
-                    ease: "power1.inOut",
+                    duration: { min: 0.8, max: 1.5 },
+                    delay: 0.15,
+                    ease: "power2.inOut",
                 },
             },
             onUpdate: function () {
@@ -62,28 +62,32 @@ export default function ProjectsSection() {
             style={{ height: `${SCROLL_HEIGHT_VH}vh` }}
             className="relative"
         >
-            <article ref={pinRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <section>
-                    {projects[activeIndex] && (
-                        <ProjectContent project={projects[activeIndex]} />
-                    )}
-                </section>
+            <article ref={pinRef}>
+                <h2 className="text-4xl text-montez col-span-2 h-fit container">Mijn projecten</h2>
 
-                <section className="relative min-h-[520px] flex items-center justify-center">
-                    <div className="relative w-[480px] h-[520px]">
-                        {projects.map((project, index) => (
-                            <ProjectCard
-                                key={index}
-                                project={project}
-                                index={index}
-                                total={projects.length}
-                                activeIndex={activeIndex}
-                                offsetX={(index + 1) * 20}
-                                onSelect={setActiveIndex}
-                            />
-                        ))}
-                    </div>
-                </section>
+                <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 mt-20">
+                    <section className="max-md:col-start-2">
+                        {projects[activeIndex] && (
+                            <ProjectContent project={projects[activeIndex]} />
+                        )}
+                    </section>
+
+                    <section className="relative min-h-[520px] flex items-center justify-end max-md:col-start-1">
+                        <div className="relative w-full h-[520px]">
+                            {projects.map((project, index) => (
+                                <ProjectCard
+                                    key={index}
+                                    project={project}
+                                    index={index}
+                                    total={projects.length}
+                                    activeIndex={activeIndex}
+                                    offsetX={Math.pow(index + 1, 2)}
+                                    onSelect={setActiveIndex}
+                                />
+                            ))}
+                        </div>
+                    </section>
+                </div>
             </article>
         </div>
     );
