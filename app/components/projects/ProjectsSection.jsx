@@ -10,7 +10,8 @@ import ProjectContent from "./ProjectContent";
 gsap.registerPlugin(ScrollTrigger);
 
 const PROJECTS_COUNT = projects.length;
-const SCROLL_HEIGHT_VH = PROJECTS_COUNT * 7;
+const STEPS = PROJECTS_COUNT - 1;
+const SCROLL_HEIGHT_VH = PROJECTS_COUNT * 9;
 
 export default function ProjectsSection() {
     const [activeIndex, setActiveIndex] = useState(PROJECTS_COUNT - 1);
@@ -32,13 +33,18 @@ export default function ProjectsSection() {
                 end: `+=${SCROLL_HEIGHT_VH}vh`,
                 pin: pin,
                 pinSpacing: true,
-                scrub: 1,
+                scrub: 0.3,
+                snap: {
+                    snapTo: 1 / STEPS,
+                    duration: { min: 0.25, max: 0.6 },
+                    delay: 0.1,
+                    ease: "power1.inOut",
+                },
             },
             onUpdate: function () {
                 const progress = progressRef.value;
-                const index =
-                    PROJECTS_COUNT - 1 - Math.floor(progress * PROJECTS_COUNT);
-                setActiveIndex(Math.max(0, index));
+                const index = STEPS - Math.round(progress * STEPS);
+                setActiveIndex(Math.max(0, Math.min(STEPS, index)));
             },
         });
 

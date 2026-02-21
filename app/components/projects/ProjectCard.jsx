@@ -20,14 +20,14 @@ export default function ProjectCard({
             style={{
                 transform: `translateX(calc(-100% + ${offsetX}px)) translateY(${offsetY}px)`,
                 zIndex,
-                transition: 'transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)',
+                transition: 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)',
             }}
             onClick={() => onSelect && onSelect(index)}
         >
             <div
                 style={{
                     transform: `translateX(${activeOffsetX}px)`,
-                    transition: 'transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)',
+                    transition: 'transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)',
                 }}
                 className={`rounded-2xl aspect-[4/2.5] h-[350px] max-w-full ${isActive ? 'border-red-500' : 'border-neutral-900'}`}
             >
