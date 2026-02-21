@@ -1,17 +1,19 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // Components
 import SlideContent from "../components/SlideContent";
+import ProjectPopup from "../components/ProjectPopup";
 import projects from '../data/projects'
 import projectsAnimation from "../animations/projectsAnimation";
 
 export default function Projects() {
     const container = useRef(null);
-    
+    const [selectedProject, setSelectedProject] = useState(null);
+
     useEffect(() => {
         projectsAnimation(container.current);
-    }, [])
+    }, []);
 
     return (
         <section className="overflow-hidden grid grid-cols-1 items-center py-16" id="projects">
@@ -19,7 +21,7 @@ export default function Projects() {
                 <div className="mb-8">
                     <h2 className="relative text-montez">Mijn projecten</h2>
                 </div>
-    
+
                 <div className="px-5">
                     <div className="flex gap-8 flex-nowrap" ref={container}>
                         {(() => {
@@ -35,10 +37,12 @@ export default function Projects() {
 
                                 return (
                                     <SlideContent
-                                        key={index}
+                                        key={project.id ?? index}
                                         {...project}
+                                        project={project}
                                         category={category}
                                         showCategory={isFirstOfCategory}
+                                        onOpenPopup={setSelectedProject}
                                     />
                                 );
                             });
@@ -46,6 +50,13 @@ export default function Projects() {
                     </div>
                 </div>
             </div>
+
+            {selectedProject && (
+                <ProjectPopup
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
+                />
+            )}
         </section>
     );
 }

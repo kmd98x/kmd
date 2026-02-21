@@ -11,11 +11,9 @@ export default function projectsAnimation(container) {
   const totalWidth = container.scrollWidth;
   const viewportWidth = window.innerWidth;
 
-  // Extra empty space on the right so the last project
-  // doesn't sit flush against the viewport edge
-  const extraRightSpace = 64; // px, tweak as desired
+  // Space so the last card is fully in view (card width ~500px + padding)
+  const extraRightSpace = 520;
 
-  // How far we need to slide so the last card lines up nicely
   const maxTranslate = Math.max(0, totalWidth - viewportWidth + extraRightSpace);
 
   gsap.to(container, {
@@ -24,8 +22,12 @@ export default function projectsAnimation(container) {
     scrollTrigger: {
       trigger: container,
       start: "center center",
+      end: () => `+=${window.innerHeight * 1.5}`,
       pin: true,
+      pinSpacing: true,
       scrub: 1,
     },
   });
+
+  return () => ScrollTrigger.refresh();
 }
