@@ -1,72 +1,75 @@
 "use client";
 
-import React, { useRef, useState } from 'react'
-import projects from "../data/projects.json"
-import ProjectCard from '../components/projects/ProjectCard'
-import ProjectContent from '../components/projects/ProjectContent';
+import React, { useState, useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import projects from "../data/projects.json";
+import ProjectCard from "../components/projects/ProjectCard";
+import ProjectContent from "../components/projects/ProjectContent";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const PROJECTS_COUNT = projects.length;
+const SCROLL_HEIGHT_VH = PROJECTS_COUNT * 100;
 
 export default function page() {
-    const [currentProject, setCurrentProject] = useState("");
-    const [rotation, setRotation] = useState(0)
+    const [activeIndex, setActiveIndex] = useState(PROJECTS_COUNT - 1);
+    const spacerRef = useRef(null);
+    const pinRef = useRef(null);
 
-    const isDragging = useRef(false)
-    const dragStartX = useRef(0)
-    const dragStartRotation = useRef(0)
+    useEffect(() => {
+        const spacer = spacerRef.current;
+        const pin = pinRef.current;
+        if (!spacer || !pin) return;
 
-    const handlePointerDown = (event) => {
-        isDragging.current = true
-        dragStartX.current = event.clientX
-        dragStartRotation.current = rotation
-        event.currentTarget.setPointerCapture(event.pointerId)
-    }
+        const trigger = ScrollTrigger.create({
+            trigger: spacer,
+            start: "top top",
+            end: `+=${SCROLL_HEIGHT_VH}vh`,
+            pin: pin,
+            pinSpacing: true,
+            onUpdate: (self) => {
+                const progress = self.progress;
+                const index =
+                    PROJECTS_COUNT - 1 - Math.floor(progress * PROJECTS_COUNT);
+                setActiveIndex(Math.max(0, index));
+            },
+        });
 
-    const handlePointerMove = (event) => {
-        if (!isDragging.current) return
-
-        const deltaX = event.clientX - dragStartX.current
-        const sensitivity = 0.3 // degrees per pixel
-        setRotation(dragStartRotation.current + deltaX * sensitivity)
-    }
-
-    const handlePointerUp = (event) => {
-        if (!isDragging.current) return
-
-        isDragging.current = false
-        event.currentTarget.releasePointerCapture(event.pointerId)
-    }
+        return () => {
+            trigger.kill();
+        };
+    }, []);
 
     return (
-        <article className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-            <section>
-                {projects.map((project, index) => (
-                    <ProjectContent key={index} project={project} />
-                ))}
-            </section>
+        <div
+            ref={spacerRef}
+            style={{ height: `${SCROLL_HEIGHT_VH}vh` }}
+            className="relative"
+        >
+            <article ref={pinRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <section>
+                    {projects[activeIndex] && (
+                        <ProjectContent project={projects[activeIndex]} />
+                    )}
+                </section>
 
-            <section className="relative min-h-[420px] flex items-center justify-center perspective-[1200px]">
-                <div
-                    className="relative w-[520px] h-[520px]"
-                    style={{
-                        transformStyle: 'preserve-3d',
-                        transform: `rotateY(${rotation}deg)`,
-                        cursor: isDragging.current ? 'grabbing' : 'grab',
-                    }}
-                    onPointerDown={handlePointerDown}
-                    onPointerMove={handlePointerMove}
-                    onPointerUp={handlePointerUp}
-                    onPointerLeave={handlePointerUp}
-                >
-                    {projects.map((project, index) => (
-                        <ProjectCard
-                            key={index}
-                            project={project}
-                            index={index}
-                            total={projects.length}
-                            radius={240}
-                        />
-                    ))}
-                </div>
-            </section>
-        </article>
-    )
+                <section className="relative min-h-[520px] flex items-center justify-center">
+                    <div className="relative w-[480px] h-[520px]">
+                        {projects.map((project, index) => (
+                            <ProjectCard
+                                key={index}
+                                project={project}
+                                index={index}
+                                total={projects.length}
+                                activeIndex={activeIndex}
+                                offsetX={(index + 1) * 20}
+                                onSelect={setActiveIndex}
+                            />
+                        ))}
+                    </div>
+                </section>
+            </article>
+        </div>
+    );
 }

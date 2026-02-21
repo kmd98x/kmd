@@ -1,26 +1,44 @@
 import React from 'react'
 import Image from 'next/image'
 
-export default function ProjectCard({ project, index = 0, total = 1, radius = 180 }) {
-    // Arrange cards in a 3D ring around the Y-axis
-    const angle = total > 0 ? (index / total) * 360 : 0
+export default function ProjectCard({
+    project,
+    index = 0,
+    total = 1,
+    activeIndex = 0,
+    offsetX = 0,
+    onSelect,
+}) {
+    const offsetY = index * 12
+    const isActive = index === activeIndex
+    const zIndex = index + 1
+    const activeOffsetX = isActive ? -148 : 0
 
     return (
         <div
-            className="p-6 border border-neutral-900 rounded-2xl bg-neutral-950 w-[420px] max-w-full absolute left-1/2 top-1/2 transition-transform duration-300 ease-out select-none"
+            className="absolute left-1/2 top-0 select-none cursor-pointer"
             style={{
-                transform: `translate(-50%, -50%) rotateY(${angle}deg) translateZ(${radius}px)`,
-                transformStyle: 'preserve-3d',
-                zIndex: index,
+                transform: `translateX(calc(-100% + ${offsetX}px)) translateY(${offsetY}px)`,
+                zIndex,
+                transition: 'transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)',
             }}
+            onClick={() => onSelect && onSelect(index)}
         >
-            <Image
-                src={`/projects/${project.image}`}
-                alt={project.title}
-                width={840}
-                height={560}
-                className="w-full h-auto rounded-xl pointer-events-none"
-            />
+            <div
+                style={{
+                    transform: `translateX(${activeOffsetX}px)`,
+                    transition: 'transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)',
+                }}
+                className={`rounded-2xl aspect-[4/2.5] h-[350px] max-w-full ${isActive ? 'border-red-500' : 'border-neutral-900'}`}
+            >
+                <Image
+                    src={`/projects/${project.thumbnail}`}
+                    alt={project.title}
+                    width={960}
+                    height={960}
+                    className="w-full h-full object-cover rounded-xl pointer-events-none"
+                />
+            </div>
         </div>
     )
 }
