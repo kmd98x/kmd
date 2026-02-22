@@ -1,5 +1,7 @@
 "use client";
 
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 
 function getFigmaEmbedUrl(link, slug) {
@@ -28,10 +30,14 @@ function getFigmaEmbedUrl(link, slug) {
 export default function ProjectPopup({ project, onClose }) {
 	if (!project) return null;
 
-	const figmaEmbedUrl = getFigmaEmbedUrl(project.link, project.slug);
-	const hasVideo = project.video;
+	const links = Array.isArray(project.links) ? project.links.filter((l) => l && typeof l.link === "string" && l.link.trim()) : [];
+	const embedLink = typeof project.embed === "string" && project.embed.trim() ? project.embed.trim() : null;
+	const figmaEmbedUrl = getFigmaEmbedUrl(embedLink, project.slug);
+	const videoSrc = typeof project.video === "string" && project.video.trim() ? project.video.trim() : null;
+	const hasVideo = !!videoSrc;
 	const hasFigma = !!figmaEmbedUrl;
-	const hasExternalLink = project.link && !figmaEmbedUrl;
+	const portfolioSrc = typeof project.portfolio === "string" && project.portfolio.trim() ? `/projects/${project.portfolio.trim()}` : null;
+	const hasPortfolio = !!portfolioSrc;
 
 	useEffect(() => {
 		const handleEscape = (e) => e.key === "Escape" && onClose();
@@ -70,14 +76,17 @@ export default function ProjectPopup({ project, onClose }) {
 					</h2>
 					<p className="text-[#fffdd0]/90 mb-6 max-w-[130ch]">{project.text}</p>
 
-					{(hasVideo || hasFigma) && (
+					{(hasVideo || hasFigma || hasPortfolio) && (
 						<div className="rounded-lg overflow-hidden border border-white/10 bg-black/30 aspect-video w-full min-h-[280px]">
 							{hasVideo && (
 								<video
-									src={project.video.startsWith("/") ? project.video : project.video}
+									key={videoSrc}
+									src={videoSrc}
 									controls
+									muted
 									className="w-full h-full object-contain"
 									playsInline
+									preload="metadata"
 								/>
 							)}
 							{hasFigma && !hasVideo && (
@@ -91,18 +100,40 @@ export default function ProjectPopup({ project, onClose }) {
 									allowFullScreen 
 								/>
 							)}
+							{hasPortfolio && !hasVideo && !hasFigma && (
+								<img
+									src={portfolioSrc}
+									alt={`Portfolio: ${project.title}`}
+									className="w-full h-full object-contain"
+								/>
+							)}
 						</div>
 					)}
 
-					{hasExternalLink && (
-						<a
-							href={project.link}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="inline-block mt-4 border border-[#fffdd0]/50 rounded-lg px-4 py-2 text-[#fffdd0] hover:bg-white/10 transition-colors"
-						>
-							{project.linkText || "Bekijk link"}
-						</a>
+					{hasPortfolio && (hasVideo || hasFigma) && (
+						<div className="mt-4 rounded-lg overflow-hidden border border-white/10 bg-black/30 w-full">
+							<img
+								src={portfolioSrc}
+								alt={`Portfolio: ${project.title}`}
+								className="w-full h-auto max-h-[70vh] object-contain"
+							/>
+						</div>
+					)}
+
+					{links.length > 0 && (
+						<div className="flex flex-wrap gap-3 mt-4">
+							{links.map((item, i) => (
+								<a
+									key={i}
+									href={item.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-[#fffdd0] hover:bg-white/5 transition-colors"
+								>
+									{item.linkText || "Bekijk link"} <FontAwesomeIcon icon={faArrowRight} className="-rotate-45" />
+								</a>
+							))}
+						</div>
 					)}
 				</div>
 			</div>

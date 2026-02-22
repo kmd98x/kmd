@@ -12,10 +12,14 @@ export default function ProjectContent({ project }) {
 
             <p className='text-white'>{project.text}</p>
 
-            {project.link ? (
-                <a href={project.link} target="_blank" rel="noopener noreferrer">{project.linkText}</a>
-            ) : (
-                <></>
+            {Array.isArray(project.links) && project.links.length > 0 && (
+                <div className="flex flex-wrap gap-3">
+                    {project.links.map((item, i) => (
+                        <a key={i} href={item.link} target="_blank" rel="noopener noreferrer">
+                            {item.linkText || "Bekijk link"}
+                        </a>
+                    ))}
+                </div>
             )}
         </div>
     )
