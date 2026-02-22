@@ -1,7 +1,8 @@
-import About from "@/app/sections/About";
-import Footer from "@/app/sections/Footer";
-import Header from "@/app/sections/Header";
-import Projects from "@/app/sections/Projects";
+import Header from "./sections/Header";
+import About from "./sections/About";
+import Footer from "./sections/Footer";
+// import ProjectsSection from "./components/projects/ProjectsSection";
+import Projects from "./sections/Projects";
 
 export default function Home() {
 	return (
@@ -9,6 +10,7 @@ export default function Home() {
 			<Header />
 			<About />
 			<Projects />
+			{/* <ProjectsSection /> */}
 			<Footer />
 		</div>
 	);
