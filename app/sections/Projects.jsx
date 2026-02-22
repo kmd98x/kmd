@@ -16,14 +16,14 @@ export default function Projects() {
     }, []);
 
     return (
-        <section className="overflow-hidden grid grid-cols-1 items-center py-16" id="projects">
-            <div className="my-auto container">
-                <div className="mb-8">
+        <section className="overflow-hidden grid grid-cols-1 items-center py-16 min-h-0" id="projects">
+            <div className="my-auto container min-h-[820px] flex flex-col">
+                <div className="mb-8 flex-shrink-0">
                     <h2 className="relative text-montez">Mijn projecten</h2>
                 </div>
 
-                <div className="px-5">
-                    <div className="flex gap-8 flex-nowrap" ref={container}>
+                <div className="px-5 flex-1 min-h-0 flex flex-col">
+                    <div className="flex gap-8 flex-nowrap min-h-[820px]" ref={container}>
                         {(() => {
                             const seenCategories = new Set();
 

@@ -3,99 +3,99 @@
 import React, { useEffect } from "react";
 
 function getFigmaEmbedUrl(link) {
-  if (!link || !link.includes("figma.com")) return null;
-  try {
-    const url = new URL(link);
-    if (url.pathname.startsWith("/design/")) {
-      const path = url.pathname; // e.g. /design/PRjTLiMiPhZ6s2tnjB4k77/...
-      return `https://embed.figma.com${path}?embed_host=share`;
-    }
-    if (url.pathname.startsWith("/file/")) {
-      const path = url.pathname.replace("/file/", "/design/");
-      return `https://embed.figma.com${path}?embed_host=share`;
-    }
-  } catch (_) {}
-  return null;
+	if (!link || !link.includes("figma.com")) return null;
+	try {
+		const url = new URL(link);
+		if (url.pathname.startsWith("/design/")) {
+			const path = url.pathname; // e.g. /design/PRjTLiMiPhZ6s2tnjB4k77/...
+			return `https://embed.figma.com${path}?embed_host=share`;
+		}
+		if (url.pathname.startsWith("/file/")) {
+			const path = url.pathname.replace("/file/", "/design/");
+			return `https://embed.figma.com${path}?embed_host=share`;
+		}
+	} catch (_) { }
+	return null;
 }
 
 export default function ProjectPopup({ project, onClose }) {
-  if (!project) return null;
+	if (!project) return null;
 
-  const figmaEmbedUrl = getFigmaEmbedUrl(project.link);
-  const hasVideo = project.video;
-  const hasFigma = !!figmaEmbedUrl;
-  const hasExternalLink = project.link && !figmaEmbedUrl;
+	const figmaEmbedUrl = getFigmaEmbedUrl(project.link);
+	const hasVideo = project.video;
+	const hasFigma = !!figmaEmbedUrl;
+	const hasExternalLink = project.link && !figmaEmbedUrl;
 
-  useEffect(() => {
-    const handleEscape = (e) => e.key === "Escape" && onClose();
-    document.addEventListener("keydown", handleEscape);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "";
-    };
-  }, [onClose]);
+	useEffect(() => {
+		const handleEscape = (e) => e.key === "Escape" && onClose();
+		document.addEventListener("keydown", handleEscape);
+		document.body.style.overflow = "hidden";
+		return () => {
+			document.removeEventListener("keydown", handleEscape);
+			document.body.style.overflow = "";
+		};
+	}, [onClose]);
 
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="popup-title"
-    >
-      <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl border border-[#fffdd0]/20 bg-gradient-to-br from-neutral-900 to-neutral-950 shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full border border-[#fffdd0]/30 text-[#fffdd0] hover:bg-white/10 transition-colors"
-          aria-label="Sluiten"
-        >
-          ×
-        </button>
+	return (
+		<div
+			className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+			onClick={onClose}
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="popup-title"
+		>
+			<div
+				className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl border border-[#fffdd0]/20 bg-gradient-to-br from-neutral-900 to-neutral-950 shadow-2xl"
+				onClick={(e) => e.stopPropagation()}
+			>
+				<button
+					type="button"
+					onClick={onClose}
+					className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full border border-[#fffdd0]/30 text-[#fffdd0] hover:bg-white/10 transition-colors"
+					aria-label="Sluiten"
+				>
+					×
+				</button>
 
-        <div className="p-6 md:p-8">
-          <h2 id="popup-title" className="text-2xl font-bold text-[#fffdd0] mb-2 pr-10">
-            {project.title}
-          </h2>
-          <p className="text-[#fffdd0]/90 mb-6 max-w-prose">{project.text}</p>
+				<div className="p-6 md:p-8">
+					<h2 id="popup-title" className="text-2xl font-bold text-[#fffdd0] mb-2 pr-10">
+						{project.title}
+					</h2>
+					<p className="text-[#fffdd0]/90 mb-6 max-w-prose">{project.text}</p>
 
-          {(hasVideo || hasFigma) && (
-            <div className="rounded-lg overflow-hidden border border-white/10 bg-black/30 aspect-video w-full min-h-[280px]">
-              {hasVideo && (
-                <video
-                  src={project.video.startsWith("/") ? project.video : project.video}
-                  controls
-                  className="w-full h-full object-contain"
-                  playsInline
-                />
-              )}
-              {hasFigma && !hasVideo && (
-                <iframe
-                  src={figmaEmbedUrl}
-                  className="w-full h-full min-h-[280px]"
-                  allowFullScreen
-                  title={`Figma: ${project.title}`}
-                />
-              )}
-            </div>
-          )}
+					{(hasVideo || hasFigma) && (
+						<div className="rounded-lg overflow-hidden border border-white/10 bg-black/30 aspect-video w-full min-h-[280px]">
+							{hasVideo && (
+								<video
+									src={project.video.startsWith("/") ? project.video : project.video}
+									controls
+									className="w-full h-full object-contain"
+									playsInline
+								/>
+							)}
+							{hasFigma && !hasVideo && (
+								<iframe
+									src={figmaEmbedUrl}
+									className="w-full h-full min-h-[280px]"
+									allowFullScreen
+									title={`Figma: ${project.title}`}
+								/>
+							)}
+						</div>
+					)}
 
-          {hasExternalLink && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 border border-[#fffdd0]/50 rounded-lg px-4 py-2 text-[#fffdd0] hover:bg-white/10 transition-colors"
-            >
-              {project.linkText || "Bekijk link"}
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+					{hasExternalLink && (
+						<a
+							href={project.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="inline-block mt-4 border border-[#fffdd0]/50 rounded-lg px-4 py-2 text-[#fffdd0] hover:bg-white/10 transition-colors"
+						>
+							{project.linkText || "Bekijk link"}
+						</a>
+					)}
+				</div>
+			</div>
+		</div>
+	);
 }

@@ -17,8 +17,6 @@ export default function Header() {
                     <span className={`bg-[#FFFDD0]/50 h-px inline-block transition duration-1000 ${isOpen ? "w-0" : "w-5"}`}></span>
                     <span className={`bg-[#FFFDD0]/50 h-px w-5 inline-block transition-transform duration-1000 ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`}></span>
                 </div>
-                
-                {/* <div className={`border border-[#FFFDD0]/50 duration-1000 py-1.5 w-12 transition rounded-md text-sm text-[#FFFDD0]/50 ${isOpen ? "opacity-0" : ""}`}>NL</div> */}
             </div>
 
             <div className="my-auto">
@@ -28,6 +26,7 @@ export default function Header() {
                     className="mx-auto inline-block h-auto translate-y-[50px] w-[clamp(13.5rem,-24.375rem_+_101vw,30rem)]"
                     src="/logo-desktop.svg"
                     alt="logo"
+                    loading="eager"
                 />
             </div>
         </header>

@@ -15,7 +15,7 @@
         "thumbnail": "thumbnails/boekenzoeker.svg",
         "title": "Boekenzoeker",
         "text": "Voor het vak Visual Interface Design: een app waarmee jongeren van 12-17 jaar makkelijk een boek kunnen zoeken via de Gemeente Amsterdam. De speelse doelgroep was een interessante uitdaging waarbij meerdere design iteraties zijn gemaakt.",
-        "excerpt": "Boekenzoek-app voor jongeren (12-17 jaar) via Gemeente Amsterdam. Speels ontwerp met meerdere design iteraties."
+        "excerpt": "Boekenzoek-app voor jongeren via Gemeente Amsterdam."
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "thumbnail": "thumbnails/eu-tribe.svg",
         "title": "EU Tribe",
         "text": "Een app om mensen online te leren kennen die dezelfde reisbestemming hebben. Deel foto's van plekken, lees ervaringen en eetplekken, en zie wie er ook naartoe reist. Voor extra veiligheid wordt een paspoort scan vereist bij het boeken van een reis.",
-        "excerpt": "Reisbestemming-gebaseerde social app met foto's, tips en veiligheidsverificatie."
+        "excerpt": "Social reis app met foto's, tips en veiligheidsverificatie."
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "thumbnail": "thumbnails/dbb.svg",
         "title": "DBB",
         "text": "Een mobiele app die mensen bewuster maakt van duurzaamheid rondom composteren. Je vindt informatie over de organisatie, kunt een composteerplek reserveren en meedoen. Ontworpen in Figma en vervolgens gebouwd met HTML en CSS.",
-        "excerpt": "Composteer-app met reserveringssysteem"
+        "excerpt": "Composteer app met reserveringssysteem."
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "thumbnail": "thumbnails/hema-cupcakes.svg",
         "title": "Cupcake maker",
         "text": "Een app voor de HEMA waarbij klanten cupcakes zelf kunnen decoreren en hun bezorgtijd kunnen instellen. Het project bestond uit het uitwerken van schermen in Adobe Illustrator.",
-        "excerpt": "HEMA cupcake-app voor zelf decoreren en bezorgtijd instellen."
+        "excerpt": "HEMA cupcake app voor zelf decoreren en bezorgtijd instellen."
     },
     {
         "id": 6,
@@ -64,7 +64,7 @@
         "text": "Een app waarbij je kleding online bestelt en digitaal past op je eigen lichaam. Zo weet je van tevoren of het past. Goed voor duurzaamheid en gemak. Naast de app is ook een dashboard ontworpen. Bij dit project  moest ik alleen schermen maken.",
         "linkText": "bekijk Figma bestand",
         "link": "https://www.figma.com/design/PRjTLiMiPhZ6s2tnjB4k77/J2-B1-Content-Delivery-inleveren-8.4?node-id=1-420&t=VNy3VrHmMxYF6tH5-0",
-        "excerpt": "Virtuele paskamer-app met digitale pasfunctie. Duurzaam online shoppen."
+        "excerpt": "Virtuele paskamer app met digitale pasfunctie."
     },
     {
         "id": 8,
@@ -84,7 +84,7 @@
         "text": "Een one-page website voor een jazzevenement van Gemeente Rotterdam. Uitdaging: eigen visuele stijlelementen toevoegen voor de muziekbeleving, terwijl de herkenbaarheid van de gemeente behouden blijft. Uitgewerkt voor mobiel, mid screen en large screen met het officiële design systeem.",
         "linkText": "bekijk Figma bestand",
         "link": "https://www.figma.com/design/Rku4wjORD58t7ejFLqMKTi/J2-B2-Vormgeving-2?t=ayqKWln3onrceJ7P-0",
-        "excerpt": "One-page jazzevenement website Gemeente Rotterdam. Eigen muzikale stijl met gemeentelijk design systeem."
+        "excerpt": "One-page jazzevenement website voor Gemeente Rotterdam."
     },
     {
         "id": 10,
