@@ -22,7 +22,7 @@ export default function projectsAnimation(container) {
 		scrollTrigger: {
 			trigger: container,
 			start: "45% 60%",
-			end: () => `+=${window.innerHeight * 1.5}`,
+			end: () => `+=${window.innerHeight * 1.5 - 1010}`,
 			pin: true,
 			pinSpacing: true,
 			scrub: 1,

@@ -16,7 +16,7 @@ export default function Projects() {
     }, []);
 
     return (
-        <section className="overflow-hidden grid grid-cols-1 items-center py-16 min-h-0" id="projects">
+        <section className="overflow-hidden grid grid-cols-1 items-center pt-16 min-h-0" id="projects">
             <div className="my-auto container min-h-[820px] flex flex-col">
                 <div className="mb-8 flex-shrink-0">
                     <h2 className="relative text-montez">Mijn projecten</h2>

@@ -2,26 +2,33 @@
 
 import React, { useEffect } from "react";
 
-function getFigmaEmbedUrl(link) {
-	if (!link || !link.includes("figma.com")) return null;
+function getFigmaEmbedUrl(link, slug) {
+	if (!link || !link.includes("figma.com") || !slug) return null;
 	try {
 		const url = new URL(link);
+		const embedHost = `embed_host=${encodeURIComponent(slug)}`;
 		if (url.pathname.startsWith("/design/")) {
-			const path = url.pathname; // e.g. /design/PRjTLiMiPhZ6s2tnjB4k77/...
-			return `https://embed.figma.com${path}?embed_host=share`;
+			const path = url.pathname;
+			const params = new URLSearchParams(url.search);
+			params.set("embed_host", slug);
+			const qs = params.toString();
+			return `https://embed.figma.com${path}${qs ? `?${qs}` : ""}`;
 		}
 		if (url.pathname.startsWith("/file/")) {
 			const path = url.pathname.replace("/file/", "/design/");
-			return `https://embed.figma.com${path}?embed_host=share`;
+			const params = new URLSearchParams(url.search);
+			params.set("embed_host", slug);
+			const qs = params.toString();
+			return `https://embed.figma.com${path}${qs ? `?${qs}` : ""}`;
 		}
-	} catch (_) { }
+	} catch (_) {}
 	return null;
 }
 
 export default function ProjectPopup({ project, onClose }) {
 	if (!project) return null;
 
-	const figmaEmbedUrl = getFigmaEmbedUrl(project.link);
+	const figmaEmbedUrl = getFigmaEmbedUrl(project.link, project.slug);
 	const hasVideo = project.video;
 	const hasFigma = !!figmaEmbedUrl;
 	const hasExternalLink = project.link && !figmaEmbedUrl;
@@ -45,13 +52,13 @@ export default function ProjectPopup({ project, onClose }) {
 			aria-labelledby="popup-title"
 		>
 			<div
-				className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-xl border border-[#fffdd0]/20 bg-gradient-to-br from-neutral-900 to-neutral-950 shadow-2xl"
+				className="relative w-full max-w-7xl max-h-[90vh] overflow-y-auto rounded-xl border border-[#fffdd0]/20 bg-gradient-to-br from-neutral-900 to-neutral-950 shadow-2xl"
 				onClick={(e) => e.stopPropagation()}
 			>
 				<button
 					type="button"
 					onClick={onClose}
-					className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full border border-[#fffdd0]/30 text-[#fffdd0] hover:bg-white/10 transition-colors"
+					className="absolute top-4 right-4 z-10 w-9 aspect-square text-3xl flex items-center justify-center rounded-full text-[#fffdd0] hover:bg-[#fffdd0]/5 transition-colors"
 					aria-label="Sluiten"
 				>
 					×
@@ -61,7 +68,7 @@ export default function ProjectPopup({ project, onClose }) {
 					<h2 id="popup-title" className="text-2xl font-bold text-[#fffdd0] mb-2 pr-10">
 						{project.title}
 					</h2>
-					<p className="text-[#fffdd0]/90 mb-6 max-w-prose">{project.text}</p>
+					<p className="text-[#fffdd0]/90 mb-6 max-w-[130ch]">{project.text}</p>
 
 					{(hasVideo || hasFigma) && (
 						<div className="rounded-lg overflow-hidden border border-white/10 bg-black/30 aspect-video w-full min-h-[280px]">
@@ -74,11 +81,14 @@ export default function ProjectPopup({ project, onClose }) {
 								/>
 							)}
 							{hasFigma && !hasVideo && (
-								<iframe
-									src={figmaEmbedUrl}
+								<iframe 
+									style={{border: "1px solid rgba(0, 0, 0, 0.1)"}} 
 									className="w-full h-full min-h-[280px]"
-									allowFullScreen
 									title={`Figma: ${project.title}`}
+									width="800" 
+									height="450" 
+									src={figmaEmbedUrl} 
+									allowFullScreen 
 								/>
 							)}
 						</div>

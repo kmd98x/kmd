@@ -2,10 +2,8 @@ import React from "react";
 import Image from "next/image";
 
 export default function SlideContent({ image, title, text, excerpt, link, linkText, slug, category, showCategory, project, onOpenPopup }) {
-    const handleClick = (e) => {
-        if (slug && !link) return; // let link navigate
+    const handleClick = () => {
         if (onOpenPopup && project) {
-            e.preventDefault();
             onOpenPopup(project);
         }
     };

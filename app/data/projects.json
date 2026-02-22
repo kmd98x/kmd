@@ -6,7 +6,8 @@
         "thumbnail": "thumbnails/synergy.svg",
         "title": "Synergy app",
         "text": "Een mobiele app voor sportliefhebbers. Je kiest een workout, ziet hoeveel calorieën je verbrand hebt en houdt bij op welke dagen je gesport hebt. De focus lag op de competentie prototypen en uitwerken.",
-        "excerpt": "Mobiele fitness-app voor workout tracking en calorieën teller."
+        "excerpt": "Mobiele fitness-app voor workout tracking en calorieën teller.",
+        "slug": "synergy-app"
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "thumbnail": "thumbnails/boekenzoeker.svg",
         "title": "Boekenzoeker",
         "text": "Voor het vak Visual Interface Design: een app waarmee jongeren van 12-17 jaar makkelijk een boek kunnen zoeken via de Gemeente Amsterdam. De speelse doelgroep was een interessante uitdaging waarbij meerdere design iteraties zijn gemaakt.",
-        "excerpt": "Boekenzoek-app voor jongeren via Gemeente Amsterdam."
+        "excerpt": "Boekenzoek-app voor jongeren via Gemeente Amsterdam.",
+        "slug": "boekenzoeker"
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "thumbnail": "thumbnails/eu-tribe.svg",
         "title": "EU Tribe",
         "text": "Een app om mensen online te leren kennen die dezelfde reisbestemming hebben. Deel foto's van plekken, lees ervaringen en eetplekken, en zie wie er ook naartoe reist. Voor extra veiligheid wordt een paspoort scan vereist bij het boeken van een reis.",
-        "excerpt": "Social reis app met foto's, tips en veiligheidsverificatie."
+        "excerpt": "Social reis app met foto's, tips en veiligheidsverificatie.",
+        "slug": "eu-tribe"
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "thumbnail": "thumbnails/dbb.svg",
         "title": "DBB",
         "text": "Een mobiele app die mensen bewuster maakt van duurzaamheid rondom composteren. Je vindt informatie over de organisatie, kunt een composteerplek reserveren en meedoen. Ontworpen in Figma en vervolgens gebouwd met HTML en CSS.",
-        "excerpt": "Composteer app met reserveringssysteem."
+        "excerpt": "Composteer app met reserveringssysteem.",
+        "slug": "dbb"
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@
         "thumbnail": "thumbnails/hema-cupcakes.svg",
         "title": "Cupcake maker",
         "text": "Een app voor de HEMA waarbij klanten cupcakes zelf kunnen decoreren en hun bezorgtijd kunnen instellen. Het project bestond uit het uitwerken van schermen in Adobe Illustrator.",
-        "excerpt": "HEMA cupcake app voor zelf decoreren en bezorgtijd instellen."
+        "excerpt": "HEMA cupcake app voor zelf decoreren en bezorgtijd instellen.",
+        "slug": "cupcake-maker"
     },
     {
         "id": 6,
@@ -53,7 +58,8 @@
         "text": "De allereerste website gemaakt met HTML en CSS. De content draait om iets wat je leuk vond. Responsive design maakte nog geen deel uit van de opdracht, dit was puur een kennismaking met webdevelopment.",
         "linkText": "Bekijk portfolio",
         "link": "https://kmd98x.github.io/kmdportfolio/index.html",
-        "excerpt": "Kennismaking met HTML/CSS webdevelopment."
+        "excerpt": "Kennismaking met HTML/CSS webdevelopment.",
+        "slug": "mijn-favoriete-geurtjes"
     },
     {
         "id": 7,
@@ -62,9 +68,10 @@
         "thumbnail": "thumbnails/kmd-webshop.svg",
         "title": "KMD Webshop",
         "text": "Een app waarbij je kleding online bestelt en digitaal past op je eigen lichaam. Zo weet je van tevoren of het past. Goed voor duurzaamheid en gemak. Naast de app is ook een dashboard ontworpen. Bij dit project  moest ik alleen schermen maken.",
-        "linkText": "bekijk Figma bestand",
-        "link": "https://www.figma.com/design/PRjTLiMiPhZ6s2tnjB4k77/J2-B1-Content-Delivery-inleveren-8.4?node-id=1-420&t=VNy3VrHmMxYF6tH5-0",
-        "excerpt": "Virtuele paskamer app met digitale pasfunctie."
+        "linkText": "Bekijk Figma bestand",
+        "link": "https://www.figma.com/design/PRjTLiMiPhZ6s2tnjB4k77/J2-B1-Content-Delivery-inleveren-8.4?node-id=0-1&p=f&t=yRIa0fZlND0ShEHR-0&embed-host=kmd-webshop",
+        "excerpt": "Virtuele paskamer app met digitale pasfunctie.",
+        "slug": "kmd-webshop"
     },
     {
         "id": 8,
@@ -73,7 +80,8 @@
         "thumbnail": "thumbnails/capibara.svg",
         "title": "Capibara",
         "text": "Een project rondom interactie, afgerond met een fysiek bordspel. Het thema: capibara's.",
-        "excerpt": "Een fysiek bordspel."
+        "excerpt": "Een fysiek bordspel.",
+        "slug": "capibara"
     },
     {
         "id": 9,
@@ -82,9 +90,10 @@
         "thumbnail": "thumbnails/gemeente-rotterdam.svg",
         "title": "Gemeente Rotterdam",
         "text": "Een one-page website voor een jazzevenement van Gemeente Rotterdam. Uitdaging: eigen visuele stijlelementen toevoegen voor de muziekbeleving, terwijl de herkenbaarheid van de gemeente behouden blijft. Uitgewerkt voor mobiel, mid screen en large screen met het officiële design systeem.",
-        "linkText": "bekijk Figma bestand",
-        "link": "https://www.figma.com/design/Rku4wjORD58t7ejFLqMKTi/J2-B2-Vormgeving-2?t=ayqKWln3onrceJ7P-0",
-        "excerpt": "One-page jazzevenement website voor Gemeente Rotterdam."
+        "linkText": "Bekijk Figma bestand",
+        "link": "https://www.figma.com/design/Rku4wjORD58t7ejFLqMKTi/J2-B2-Vormgeving-2?t=ayqKWln3onrceJ7P-0&embed-host=gemeente-rotterdam",
+        "excerpt": "One-page jazzevenement website voor Gemeente Rotterdam.",
+        "slug": "gemeente-rotterdam"
     },
     {
         "id": 10,
@@ -95,7 +104,8 @@
         "text": "Een desktopversie van het hangman spel als kennismaking met JavaScript.",
         "linkText": "Bezoek het spel",
         "link": "https://kmd98x.github.io/finalhangman/",
-        "excerpt": "Hangman spel voor desktop. Kennismaking met JavaScript."
+        "excerpt": "Hangman spel voor desktop. Kennismaking met JavaScript.",
+        "slug": "hangman"
     },
     {
         "id": 11,
@@ -104,9 +114,10 @@
         "thumbnail": "thumbnails/vibes.svg",
         "title": "Vibes",
         "text": "Een app om afspraken te maken met mensen in de buurt of feestjes te ontdekken. Je ziet de route, kunt aangeven of je erbij bent en chatten met andere gebruikers. Uitgewerkt als hi-fi schermen zonder werkend prototype.",
-        "linkText": "bekijk Figma bestand",
-        "link": "https://www.figma.com/design/3kJLYgZesWPMcYRpoywOVt/J2B2-Responsive-Multi-Device-Design?node-id=0-1&p=f&t=VNy3VrHmMxYF6tH5-0",
-        "excerpt": "Social app voor buurtafspraken en feestjes ontdekken."
+        "linkText": "Bekijk Figma bestand",
+        "link": "https://www.figma.com/design/3kJLYgZesWPMcYRpoywOVt/J2B2-Responsive-Multi-Device-Design?node-id=0-1&p=f&t=VNy3VrHmMxYF6tH5-0&embed-host=vibes",
+        "excerpt": "Social app voor buurtafspraken en feestjes ontdekken.",
+        "slug": "vibes"
     },
     {
         "id": 12,
@@ -117,7 +128,8 @@
         "text": "Voor het vak Frontend Development moest ik een bestaande website opnieuw maken met eigen code. Ik heb de Bijenkorf website gekozen.",
         "linkText": "Zie website",
         "link": "https://kmd98x.github.io/FvD/",
-        "excerpt": "Bijenkorf website remake met eigen code."
+        "excerpt": "Bijenkorf website remake met eigen code.",
+        "slug": "bijenkorf"
     },
     {
         "id": 13,
@@ -126,7 +138,8 @@
         "thumbnail": "thumbnails/eerste-portfolio.svg",
         "title": "Mijn eerste portfolio",
         "text": "Gemaakt ter voorbereiding op mijn korte stage in jaar 2. Dit is mijn allereerste portfolio website, gebouwd met HTML en CSS.",
-        "excerpt": "Eerste portfolio website voor stage-voorbereiding."
+        "excerpt": "Eerste portfolio website voor stage-voorbereiding.",
+        "slug": "mijn-eerste-portfolio"
     },
     {
         "id": 14,
@@ -135,7 +148,8 @@
         "thumbnail": "thumbnails/stage-fw.svg",
         "title": "Stage Frankwatching",
         "text": "Tijdens mijn korte stage bij Frankwatching heb ik meerdere projecten gedaan. Dit is er 1 van: een notitieboek dat fysiek is uitgeprint en uitgedeeld.",
-        "excerpt": "Notitieboek ontwerp voor Frankwatching stage."
+        "excerpt": "Notitieboek ontwerp voor Frankwatching stage.",
+        "slug": "stage-frankwatching"
     },
     {
         "id": 15,
@@ -146,6 +160,7 @@
         "text": "Mijn minor Behaviour Design resulteerde in dit project waar ik het meest trots op ben: een digitaal bordspel voor jonge professionals en trainees. Het spel helpt spelers bewuster te worden van patronen en overtuigingen die hen belemmeren om zichzelf volledig te zijn.",
         "linkText": "Bezoek het spel",
         "link": "https://kmd-minorbd-omnient.vercel.app/",
-        "excerpt": "Digitaal bordspel voor jonge professionals."
+        "excerpt": "Digitaal bordspel voor jonge professionals.",
+        "slug": "minor-behaviour-design"
     }
 ]
