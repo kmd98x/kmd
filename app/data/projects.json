@@ -142,10 +142,10 @@
         "year": "jaar 3",
         "image": "jaar-3/minor.png",
         "thumbnail": "thumbnails/minor.svg",
-        "title": "Minor",
+        "title": "Minor Behaviour Design",
         "text": "Mijn minor Behaviour Design resulteerde in dit project waar ik het meest trots op ben: een digitaal bordspel voor jonge professionals en trainees. Het spel helpt spelers bewuster te worden van patronen en overtuigingen die hen belemmeren om zichzelf volledig te zijn.",
         "linkText": "Bezoek het spel",
         "link": "https://kmd-minorbd-omnient.vercel.app/",
-        "excerpt": "Digitaal bordspel voor jonge professionals. Bewustwording van beperkende patronen en overtuigingen."
+        "excerpt": "Digitaal bordspel voor jonge professionals."
     }
 ]

@@ -21,12 +21,11 @@ export default function projectsAnimation(container) {
 		ease: "none",
 		scrollTrigger: {
 			trigger: container,
-			start: "center center",
+			start: "45% 60%",
 			end: () => `+=${window.innerHeight * 1.5}`,
 			pin: true,
 			pinSpacing: true,
 			scrub: 1,
-			markers: true,
 		},
 	});
 

@@ -10,10 +10,10 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
         }
     };
 
-    const cardClass = "flex flex-col items-stretch justify-center gap-12 min-h-[720px] rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)]";
+    const cardClass = "flex flex-col items-stretch justify-between gap-12 min-h-[550px] rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)]";
     const content = (
         <>
-            <div className="w-[450px] h-[450px] flex-shrink-0 overflow-hidden relative flex items-center justify-center mx-auto">
+            <div className="w-[300px] h-[300px] 2xl:w-[450px] 2xl:h-[450px] flex-shrink-0 overflow-hidden relative flex items-center justify-center mx-auto">
                 <Image
                     width={450}
                     height={450}
@@ -34,24 +34,33 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
         </>
     );
 
-    return (
-        <div className="project relative -mt-2 flex-shrink-0 w-[500px]">
-            {showCategory && category && (
-                <span className="absolute -top-10 left-0 text-lg font-semibold tracking-wide uppercase text-[#fffdd0]/80">
-                    {category}
-                </span>
-            )}
+    const isFirstOfCategory = Boolean(showCategory && category != null && String(category).trim() !== "");
+    const categoryId = isFirstOfCategory ? String(category).toLowerCase().replace(/\s+/g, "-") : undefined;
 
+    return (
+        <div className="project relative -mt-2 flex-shrink-0 w-[380px] 2xl:w-[550px]" id={categoryId}>
             {slug && !onOpenPopup ? (
-                <a href={`project/${slug}`} className={cardClass}>
+                <a href={`project/${slug}`} className={`relative ${cardClass}`}>
+                    {isFirstOfCategory && (
+                        <span className="absolute top-1/2 left-0 -rotate-90 text-3xl font-semibold tracking-wide uppercase text-[#fffdd0]/80">
+                            {category}
+                        </span>
+                    )}
+
                     {content}
                 </a>
             ) : (
                 <button
                     type="button"
                     onClick={handleClick}
-                    className={`${cardClass} w-full text-left cursor-pointer`}
+                    className={`${cardClass} relative w-full text-left cursor-pointer`}
                 >
+                    {isFirstOfCategory && (
+                        <span className="absolute top-1/2 -translate-y-1/2 -left-[36px] font-alegreya-sans -rotate-90 text-2xl tracking-wide uppercase text-[#fffdd0]/80">
+                            {category}
+                        </span>
+                    )}
+
                     {content}
                 </button>
             )}

@@ -11,6 +11,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'alegreya-sans': ['var(--font-alegreya-sans)', 'sans-serif'],
+        'alegreya-sans-sc': ['var(--font-alegreya-sans-sc)', 'sans-serif'],
+        'montez': ['var(--font-montez)', 'cursive'],
+      },
       keyframes: {
         "spin-slow": {
           from: { transform: "rotate(0deg)" },
