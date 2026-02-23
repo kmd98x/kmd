@@ -86,6 +86,7 @@ export default function ProjectPopup({ project, onClose }) {
 									muted
 									className="w-full h-full object-contain"
 									playsInline
+									type="video/mp4"
 									preload="metadata"
 								/>
 							)}

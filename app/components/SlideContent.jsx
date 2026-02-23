@@ -24,19 +24,18 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
                 <h3 className="font-bold text-lg mb-1">{title}</h3>
                 <p className="max-w-[60ch]">{excerpt}</p>
                 {(slug || onOpenPopup) && (
-                    <span className="inline-block border border-[#fffdd0]/50 rounded-lg px-2 py-1 mt-2 transition-all duration-300 group-hover:shadow-[0_0_10px_rgba(248,241,72,0.15)]">
+                    <button type="button" className="inline-block border border-[#fffdd0]/50 text-[#fffdd0] rounded-lg px-2 py-1 mt-2 transition-all duration-300 group-hover:shadow-[0_0_10px_rgba(248,241,72,0.15)]">
                         {slug ? "Bekijk project" : "Bekijk meer"}
-                    </span>
+                    </button>
                 )}
             </div>
         </>
     );
 
     const isFirstOfCategory = Boolean(showCategory && category != null && String(category).trim() !== "");
-    const categoryId = isFirstOfCategory ? String(category).toLowerCase().replace(/\s+/g, "-") : undefined;
 
     return (
-        <div className="project relative -mt-2 flex-shrink-0 w-[380px] 2xl:w-[550px]" id={categoryId}>
+        <div className="project relative -mt-2 flex-shrink-0 w-[380px] 2xl:w-[550px]">
             {slug && !onOpenPopup ? (
                 <a href={`project/${slug}`} className={`relative ${cardClass}`}>
                     {isFirstOfCategory && (
@@ -48,7 +47,7 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
                     {content}
                 </a>
             ) : (
-                <button
+                <div
                     type="button"
                     onClick={handleClick}
                     className={`${cardClass} relative w-full text-left cursor-pointer`}
@@ -60,7 +59,7 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
                     )}
 
                     {content}
-                </button>
+                </div>
             )}
         </div>
     );
