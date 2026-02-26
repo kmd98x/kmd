@@ -6,24 +6,27 @@ import SlideContent from "../components/SlideContent";
 import ProjectPopup from "../components/ProjectPopup";
 import projects from '../data/projects'
 import projectsAnimation from "../animations/projectsAnimation";
+import titleAnimation from "../animations/titleAnimation";
 
 export default function Projects() {
     const container = useRef(null);
     const [selectedProject, setSelectedProject] = useState(null);
+    const titleRef = useRef(null);
 
     useEffect(() => {
         projectsAnimation(container.current);
+        titleAnimation(titleRef.current);
     }, []);
 
     return (
-        <section className="overflow-hidden grid grid-cols-1 items-center pt-16 min-h-0" id="projects">
-            <div className="my-auto container min-h-[820px] flex flex-col">
+        <section className="overflow-hidden flex flex-col justify-center pt-16 min-h-screen" id="projects">
+            <div className="container flex flex-col">
                 <div className="mb-8 flex-shrink-0">
-                    <h2 className="relative text-montez">Mijn projecten</h2>
+                    <h2 className="relative text-montez" ref={titleRef}>Mijn projecten</h2>
                 </div>
 
-                <div className="flex-1 min-h-0 flex flex-col">
-                    <div className="flex gap-8 flex-nowrap min-h-[820px]" ref={container}>
+                <div className="flex-1 min-h-0 flex flex-col justify-center">
+                    <div className="flex gap-8 flex-nowrap" ref={container}>
                         {(() => {
                             const seenCategories = new Set();
 

@@ -3,6 +3,8 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 
 function getFigmaEmbedUrl(link, slug) {
 	if (!link || !link.includes("figma.com") || !slug) return null;
@@ -36,8 +38,15 @@ export default function ProjectPopup({ project, onClose }) {
 	const videoSrc = typeof project.video === "string" && project.video.trim() ? project.video.trim() : null;
 	const hasVideo = !!videoSrc;
 	const hasFigma = !!figmaEmbedUrl;
-	const portfolioSrc = typeof project.portfolio === "string" && project.portfolio.trim() ? `/projects/${project.portfolio.trim()}` : null;
-	const hasPortfolio = !!portfolioSrc;
+
+	const portfolioImages = Array.isArray(project.portfolio)
+		? project.portfolio
+				.map((p) => (typeof p === "string" ? p.trim() : ""))
+				.filter((p) => p)
+		: [];
+	const portfolioSrcs = portfolioImages.map((p) => `/projects/${p}`);
+	const hasPortfolio = portfolioSrcs.length > 0;
+	const hasMultiplePortfolio = portfolioSrcs.length > 1;
 
 	useEffect(() => {
 		const handleEscape = (e) => e.key === "Escape" && onClose();
@@ -71,7 +80,7 @@ export default function ProjectPopup({ project, onClose }) {
 				</button>
 
 				<div className="p-6 md:p-8">
-					<h2 id="popup-title" className="text-2xl font-bold text-[#fffdd0] mb-2 pr-10">
+					<h2 id="popup-title" className="text-lg md:text-2xl font-bold text-[#fffdd0] mb-2 pr-10">
 						{project.title}
 					</h2>
 					<p className="text-[#fffdd0]/90 mb-6 max-w-[130ch]">{project.text}</p>
@@ -91,33 +100,78 @@ export default function ProjectPopup({ project, onClose }) {
 								/>
 							)}
 							{hasFigma && !hasVideo && (
-								<iframe 
-									style={{border: "1px solid rgba(0, 0, 0, 0.1)"}} 
+								<iframe
+									style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
 									className="w-full h-full min-h-[280px]"
 									title={`Figma: ${project.title}`}
-									width="800" 
-									height="450" 
-									src={figmaEmbedUrl} 
-									allowFullScreen 
+									width="800"
+									height="450"
+									src={figmaEmbedUrl}
+									allowFullScreen
 								/>
 							)}
 							{hasPortfolio && !hasVideo && !hasFigma && (
-								<img
-									src={portfolioSrc}
-									alt={`Portfolio: ${project.title}`}
-									className="w-full h-full object-contain"
-								/>
+								<>
+									{hasMultiplePortfolio ? (
+										<Swiper
+											spaceBetween={16}
+											slidesPerView={1}
+											navigation
+											loop={true}
+											pagination={{ clickable: true }}
+											modules={[Navigation, Pagination]}
+											className="w-full h-full"
+										>
+											{portfolioSrcs.map((src, index) => (
+												<SwiperSlide key={index}>
+													<img
+														src={src}
+														alt={`Portfolio: ${project.title} (${index + 1})`}
+														className="w-full h-full object-contain"
+													/>
+												</SwiperSlide>
+											))}
+										</Swiper>
+									) : (
+										<img
+											src={portfolioSrcs[0]}
+											alt={`Portfolio: ${project.title}`}
+											className="w-full h-full object-contain"
+										/>
+									)}
+								</>
 							)}
 						</div>
 					)}
 
 					{hasPortfolio && (hasVideo || hasFigma) && (
 						<div className="mt-4 rounded-lg overflow-hidden border border-white/10 bg-black/30 w-full">
-							<img
-								src={portfolioSrc}
-								alt={`Portfolio: ${project.title}`}
-								className="w-full h-auto max-h-[70vh] object-contain"
-							/>
+							{hasMultiplePortfolio ? (
+								<Swiper
+									spaceBetween={16}
+									slidesPerView={1}
+									navigation
+									pagination={{ clickable: true }}
+									modules={[Navigation, Pagination]}
+									className="w-full h-full"
+								>
+									{portfolioSrcs.map((src, index) => (
+										<SwiperSlide key={index}>
+											<img
+												src={src}
+												alt={`Portfolio: ${project.title} (${index + 1})`}
+												className="w-full h-auto max-h-[70vh] object-contain"
+											/>
+										</SwiperSlide>
+									))}
+								</Swiper>
+							) : (
+								<img
+									src={portfolioSrcs[0]}
+									alt={`Portfolio: ${project.title}`}
+									className="w-full h-auto max-h-[70vh] object-contain"
+								/>
+							)}
 						</div>
 					)}
 

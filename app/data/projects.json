@@ -46,7 +46,12 @@
         "title": "Cupcake maker",
         "text": "Een app voor de HEMA waarbij klanten cupcakes zelf kunnen decoreren en hun bezorgtijd kunnen instellen. Het project bestond uit het uitwerken van schermen in Adobe Illustrator.",
         "excerpt": "HEMA cupcake app voor zelf decoreren en bezorgtijd instellen.",
-        "slug": "cupcake-maker"
+        "slug": "cupcake-maker",
+        "portfolio": [
+            "portfolio/cupcake.svg",
+            "portfolio/cupcakes-craft.svg",
+            "portfolio/cupcakes-contact.svg"
+        ]
     },
     {
         "id": 6,
@@ -152,7 +157,9 @@
         "id": 14,
         "year": "jaar 2",
         "image": "jaar-2/stage-fw.png",
-        "portfolio": "jaar-2/fw-notitieboek.jpeg",
+        "portfolio": [
+            "portfolio/fw-notitieboek.jpeg"
+        ],
         "title": "Stage Frankwatching",
         "text": "Tijdens mijn korte stage bij Frankwatching heb ik meerdere projecten gedaan. Dit is er 1 van: een notitieboek dat fysiek is uitgeprint en uitgedeeld.",
         "excerpt": "Notitieboek ontwerp voor Frankwatching stage.",

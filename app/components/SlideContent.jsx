@@ -8,10 +8,10 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
         }
     };
 
-    const cardClass = "flex flex-col items-stretch justify-between gap-12 min-h-[550px] rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] py-7 px-5 group transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)]";
+    const cardClass = "flex flex-col items-center items-stretch justify-between gap-12 min-h-[200px] md:min-h-[550px] py-7 px-5 group card-surface";
     const content = (
         <>
-            <div className="w-[300px] h-[300px] 2xl:w-[450px] 2xl:h-[450px] flex-shrink-0 overflow-hidden relative flex items-center justify-center mx-auto">
+            <div className="w-[240px] h-[240px] sm:w-[400px] sm:h-[400px] flex-shrink-0 overflow-hidden relative flex items-center justify-center mx-auto">
                 <Image
                     width={450}
                     height={450}
@@ -22,9 +22,12 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
             </div>
             <div>
                 <h3 className="font-bold text-lg mb-1">{title}</h3>
-                <p className="max-w-[60ch]">{excerpt}</p>
+                <p className="max-w-[60ch] hidden sm:block">{excerpt}</p>
                 {(slug || onOpenPopup) && (
-                    <button type="button" className="inline-block border border-[#fffdd0]/50 text-[#fffdd0] rounded-lg px-2 py-1 mt-2 transition-all duration-300 group-hover:shadow-[0_0_10px_rgba(248,241,72,0.15)]">
+                    <button
+                        type="button"
+                        className="inline-block text-[#fffdd0] px-2 py-1 mt-2 card-surface"
+                    >
                         {slug ? "Bekijk project" : "Bekijk meer"}
                     </button>
                 )}
@@ -35,7 +38,7 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
     const isFirstOfCategory = Boolean(showCategory && category != null && String(category).trim() !== "");
 
     return (
-        <div className="project relative -mt-2 flex-shrink-0 w-[380px] 2xl:w-[550px]">
+        <div className="project relative -mt-2 flex-shrink-0 w-[300px]  md:w-[480px]">
             {slug && !onOpenPopup ? (
                 <a href={`project/${slug}`} className={`relative ${cardClass}`}>
                     {isFirstOfCategory && (

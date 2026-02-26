@@ -1,9 +1,17 @@
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .container {
 	@apply max-w-6xl mx-auto px-8;
+}
+
+.card-surface {
+	@apply rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)];
 }
 
 h1,
@@ -24,9 +32,15 @@ p, a {
 
 .text-montez {
 	font-family: var(--font-montez), cursive;
-	font-size: 2.5em;
+	font-size: 2em;
 	text-transform: none;
 	letter-spacing: normal;
+}
+
+@media (min-width: 768px) {
+	.text-montez {
+		font-size: 2.5em;
+	}
 }
 
 /* Body */
@@ -62,4 +76,39 @@ header {
 
 .contact-info p {
 	margin: 5px 0;
+}
+
+/* Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+	color: #fffdd0;
+	width: 28px;
+	height: 28px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	font-size: 18px;
+}
+
+/* Swiper pagination wrapper + bullets */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 9999px;
+	padding: 7px 10px;
+	width: auto;
+	left: 50%;
+	transform: translateX(-50%);
+	display: inline-flex;
+	align-items: center;
+}
+
+.swiper-pagination-bullet {
+	background-color: #fffdd0;
+	border-radius: 9999px;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: #fffdd0;
 }

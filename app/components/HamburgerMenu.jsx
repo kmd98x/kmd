@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function hamburgermenu({ links, isOpen, setIsOpen }) {
-    const linkStyles = "text-[#FFFDD0] inline-block p-5";
+    const linkStyles = "text-[#FFFDD0] inline-block p-3 md:p-5 text-[12px] md:text-base";
 
     const scrollToSection = (e, sectionId) => {
         e.preventDefault();
@@ -17,7 +17,7 @@ export default function hamburgermenu({ links, isOpen, setIsOpen }) {
 
     return (
         <nav
-            className={`fixed size-full bg-black/50 backdrop-blur transition-all duration-1000 z-20 top-0 ${
+            className={`fixed size-full bg-black/50 backdrop-blur transition-all duration-1000 z-20 top-0 flex items-center justify-center ${
                 isOpen
                     ? "pointer-events-auto opacity-100"
                     : "pointer-events-none opacity-0 "
