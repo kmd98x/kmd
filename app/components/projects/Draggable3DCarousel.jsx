@@ -16,28 +16,45 @@ const NUM_PANELS = 6;
 const REF_PANELS = 10;
 const RING_Z_BASE = 500;
 const PARALLAX_BASE = 400;
-const BASE_STAGE = 300;
 const ringRadiusScale = NUM_PANELS / REF_PANELS;
 const ringZ = RING_Z_BASE * ringRadiusScale;
 
 /**
- * Stage width cap (cards stay narrow).
- * Ring depth was scaling with max(w,h) → huge cylinder → only 1 face reads.
- * RING_DEPTH_TIGHTEN + z clamps + strong perspective ≈ 4 of 6 faces visible.
+ * Faces were full W×H of the stage → one panel filled the view (~70°+ wide).
+ * Shrink each face (scale) + set cylinder radius from width so 4 of 6 read at once.
  */
-const STAGE_MAX_WIDTH_PX = 400;
-const STAGE_MAX_WIDTH_VW_RATIO = 0.34;
-/** Extra perspective beyond z * PERSPECTIVE_PER_Z (pulls camera back) */
-const PERSPECTIVE_FLOOR = 5200;
-const PERSPECTIVE_CEILING = 20000;
-/** z = ringZ * layoutScale * this (lower → tighter ring, more faces in frame) */
-const RING_DEPTH_TIGHTEN = 0.34;
-/** perspective ≈ z * this (higher → wider field, more arc visible) */
-const PERSPECTIVE_PER_Z = 13;
+const STAGE_MAX_WIDTH_PX = 1000;
+const STAGE_MAX_WIDTH_VW_RATIO = 0.42;
+/** Max stage width as a fraction of stage height (higher → wider card faces) */
+const STAGE_WIDTH_PER_HEIGHT = 5;
+/** Fraction of padded root height used for the stage (lower → shorter cards) */
+const STAGE_HEIGHT_RATIO = 1;
+/** z ≈ this × stage width (tight cylinder behind a strip of cards) */
+const RING_Z_FROM_WIDTH = 2;
+const RING_Z_MIN = 175;
+const RING_Z_MAX = 1920;
+/** Uniform scale on each .img (rotateY + z define the horizontal ring) */
+const PANEL_FACE_SCALE = 0.34;
+const PERSPECTIVE_MIN = 12000;
+const PERSPECTIVE_MAX = 42000;
+/** perspective ≈ z × this (wide field → more arc visible) */
+const PERSPECTIVE_PER_Z = 42;
+
+/**
+ * Stage fills the carousel root (your STAGE_* caps above are not used for size).
+ * Ring depth + face scale are derived from that box so ~4 large cards read at once.
+ */
+const SECTION_WIDTH_RATIO = 0.88;
+const SECTION_HEIGHT_RATIO = 0.88;
+/** Ring radius ≈ stage width × this (tighter → more faces visible) */
+const RING_Z_STAGE_RATIO = 0.46;
+/** Each card face ≈ this fraction of the stage width on the ring */
+const RING_FACE_SCALE = 0.58;
+const PERSPECTIVE_VISUAL_BOOST = 1.35;
 
 /** Card: image fills upper area; title, excerpt, CTA pinned to bottom */
 const cardClass =
-	"relative flex h-full w-full min-h-0 flex-col items-stretch py-4 px-4 text-left group card-surface sm:py-5 sm:px-5";
+	`${styles.cardInner} relative flex h-full w-full min-h-0 flex-col items-stretch py-4 px-4 text-left group card-surface sm:py-5 sm:px-6`;
 
 function getClientX(e) {
 	if (e?.touches?.[0]) return Math.round(e.touches[0].clientX);
@@ -45,17 +62,14 @@ function getClientX(e) {
 }
 
 function measureStage(rootW, rootH) {
-	const padX = 0.035;
-	const padY = 0.055;
-	const wFull = rootW * (1 - 2 * padX);
-	const h = Math.max(300, Math.round(rootH * (1 - 2 * padY)));
-	const maxW = Math.min(
-		STAGE_MAX_WIDTH_PX,
-		rootW * STAGE_MAX_WIDTH_VW_RATIO,
-		Math.round(h * 0.58),
-	);
-	const w = Math.max(260, Math.round(Math.min(wFull, maxW)));
-	return { w, h };
+	return {
+		w: Math.max(320, Math.round(rootW * SECTION_WIDTH_RATIO)),
+		h: Math.max(300, Math.round(rootH * SECTION_HEIGHT_RATIO)),
+	};
+}
+
+function ringPanelScale() {
+	return RING_FACE_SCALE;
 }
 
 function debounce(fn, ms) {
@@ -68,38 +82,34 @@ function debounce(fn, ms) {
 
 function CarouselSlideCard({ project }) {
 	const imageBlock = (
-		<div
-			className={`${styles.imageWrap} mx-auto flex w-full max-w-full flex-shrink-0 items-center justify-center overflow-hidden`}
-		>
+		<div className={styles.cardMedia}>
+			<div
+				className={`${styles.imageWrap} mx-auto flex h-full w-full max-w-full items-center justify-center overflow-hidden`}
+			>
 			<div className={`${styles.parallaxShift} relative h-full w-full`}>
 				<div className={styles.imageFrame}>
 					<Image
 						src={`/projects/${project.image}`}
 						alt={project.title}
 						fill
-						sizes="(max-width: 768px) 85vw, 400px"
+						sizes="(max-width: 768px) 90vw, 560px"
 						className="object-contain"
 						draggable={false}
 					/>
 				</div>
 			</div>
 		</div>
+		</div>
 	);
 
 	const textBlock = (
-		<div className="w-full shrink-0 border-t border-[#fffdd0]/10 pt-3 sm:pt-4">
-			<h3 className="mb-1 line-clamp-2 text-base font-bold leading-snug sm:text-lg">
-				{project.title}
-			</h3>
+		<div className={styles.cardFooter}>
+			<h3 className={styles.cardTitle}>{project.title}</h3>
 			{project.excerpt ? (
-				<p className="mb-1 line-clamp-2 hidden max-w-[60ch] text-sm sm:block sm:text-base">
-					{project.excerpt}
-				</p>
+				<p className={styles.cardExcerpt}>{project.excerpt}</p>
 			) : null}
 			{project.slug ? (
-				<span className="mt-2 inline-block px-3 py-1.5 text-sm text-[#fffdd0] card-surface sm:text-base">
-					Bekijk project
-				</span>
+				<span className={styles.cardCta}>Bekijk project</span>
 			) : null}
 		</div>
 	);
@@ -111,24 +121,16 @@ function CarouselSlideCard({ project }) {
 				className={`${cardClass} cursor-pointer`}
 				draggable={false}
 			>
-				<div className="flex min-h-0 flex-1 flex-col items-stretch">
-					<div className="flex min-h-0 flex-1 flex-col items-center justify-center">
-						{imageBlock}
-					</div>
-					{textBlock}
-				</div>
+				{imageBlock}
+				{textBlock}
 			</Link>
 		);
 	}
 
 	return (
 		<div className={`${cardClass} cursor-default`}>
-			<div className="flex min-h-0 flex-1 flex-col items-stretch">
-				<div className="flex min-h-0 flex-1 flex-col items-center justify-center">
-					{imageBlock}
-				</div>
-				{textBlock}
-			</div>
+			{imageBlock}
+			{textBlock}
 		</div>
 	);
 }
@@ -156,27 +158,30 @@ export default function Draggable3DCarousel() {
 				return;
 
 			const panelSelector = `.${styles.img}`;
+			const faceSelector = `.${styles.cardFace}`;
 			const parallaxSelector = `.${styles.parallaxShift}`;
 
 			function getRingGeometry() {
-				const { w, h } = layoutRef.current;
-				if (w < 4 || h < 4) {
-					return { zD: ringZ, parallax: PARALLAX_BASE * ringRadiusScale };
+				const { w } = layoutRef.current;
+				const panelScale = ringPanelScale();
+				if (w < 4) {
+					return {
+						zD: ringZ,
+						parallax: PARALLAX_BASE * ringRadiusScale,
+						panelScale,
+					};
 				}
-				const maxDim = Math.max(w, h);
-				const minDim = Math.min(w, h);
-				const layoutScale = maxDim / BASE_STAGE;
-				const zLoose = ringZ * layoutScale;
 				const zD = Math.min(
-					zLoose * RING_DEPTH_TIGHTEN,
-					minDim * 0.9,
-					maxDim * 0.46,
+					RING_Z_MAX,
+					Math.max(RING_Z_MIN, Math.round(w * RING_Z_STAGE_RATIO)),
 				);
 				const parallax =
 					PARALLAX_BASE *
 					ringRadiusScale *
-					Math.min(1.85, zD / Math.max(ringZ, 1));
-				return { zD, parallax };
+					(zD / Math.max(ringZ, 1)) *
+					0.5 *
+					panelScale;
+				return { zD, parallax, panelScale };
 			}
 
 			function getParallaxX(i) {
@@ -189,15 +194,22 @@ export default function Draggable3DCarousel() {
 			const dragParallax = contextSafe(() => {
 				gsap.set(parallaxSelector, {
 					x: (i) => getParallaxX(i),
+					y: 0,
 				});
 			});
 
 			function applyPanelLayout() {
-				const { zD } = getRingGeometry();
+				const { zD, panelScale } = getRingGeometry();
 				gsap.set(panelSelector, {
 					rotateY: (i) => i * -step,
+					rotateX: 0,
 					transformOrigin: `50% 50% ${zD}px`,
 					z: -zD,
+					backfaceVisibility: "hidden",
+				});
+				gsap.set(faceSelector, {
+					scale: panelScale,
+					transformOrigin: "50% 50%",
 					backfaceVisibility: "hidden",
 				});
 				dragParallax();
@@ -224,13 +236,20 @@ export default function Draggable3DCarousel() {
 
 				const { zD } = getRingGeometry();
 				const perspectivePx = Math.min(
-					PERSPECTIVE_CEILING,
-					Math.max(PERSPECTIVE_FLOOR, zD * PERSPECTIVE_PER_Z),
+					PERSPECTIVE_MAX,
+					Math.max(
+						PERSPECTIVE_MIN,
+						zD * PERSPECTIVE_PER_Z * PERSPECTIVE_VISUAL_BOOST,
+					),
 				);
 
 				container.style.width = `${w}px`;
 				container.style.height = `${h}px`;
 				container.style.perspective = `${perspectivePx}px`;
+				container.style.setProperty(
+					"--ring-face-scale",
+					String(getRingGeometry().panelScale),
+				);
 
 				applyPanelLayout();
 			}
@@ -242,7 +261,10 @@ export default function Draggable3DCarousel() {
 			applyLayout();
 
 			const tl = gsap.timeline();
-			tl.set(dragger, { opacity: 0 }).set(ring, { rotationY: 180 });
+			tl.set(dragger, { opacity: 0 }).set(ring, {
+				rotationY: 180,
+				rotationX: 0,
+			});
 
 			if (reduceMotion) {
 				tl.set(panelSelector, { y: 0, opacity: 1 });
@@ -320,7 +342,9 @@ export default function Draggable3DCarousel() {
 							key={project.id ?? project.slug ?? i}
 							className={`${styles.img} ${styles.abs}`}
 						>
-							<CarouselSlideCard project={project} />
+							<div className={styles.cardFace}>
+								<CarouselSlideCard project={project} />
+							</div>
 						</div>
 					))}
 				</div>
