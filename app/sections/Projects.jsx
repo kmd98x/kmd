@@ -1,32 +1,64 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 // Components
 import SlideContent from "../components/SlideContent";
 import ProjectPopup from "../components/ProjectPopup";
 import projects from '../data/projects'
-import projectsAnimation from "../animations/projectsAnimation";
 import titleAnimation from "../animations/titleAnimation";
 
 export default function Projects() {
-    const container = useRef(null);
     const [selectedProject, setSelectedProject] = useState(null);
     const titleRef = useRef(null);
 
     useEffect(() => {
-        projectsAnimation(container.current);
         titleAnimation(titleRef.current);
     }, []);
 
     return (
-        <section className="overflow-hidden flex flex-col justify-center pt-16 min-h-screen" id="projects">
-            <div className="container flex flex-col">
-                <div className="mb-8 flex-shrink-0">
+        <section className="flex flex-col justify-center pt-16 min-h-screen relative" id="projects">
+            <div>
+                <div className="container mb-8 flex-shrink-0">
                     <h2 className="relative text-montez" ref={titleRef}>Mijn projecten</h2>
                 </div>
 
-                <div className="flex-1 min-h-0 flex flex-col justify-center">
-                    <div className="flex gap-8 flex-nowrap" ref={container}>
+                <div
+                    className="absolute top-[310px] w-full h-[100px] z-50 bg-black"
+                    style={{
+                        borderRadius: "100%",
+                        borderTopLeftRadius: 0,
+                        borderBottomLeftRadius: 0
+                    }}
+                />
+
+                <div
+                    className="absolute bottom-[150px] w-full h-[100px] z-50 bg-black"
+                    style={{
+                        borderRadius: "100%",
+                        borderTopLeftRadius: 0,
+                        borderBottomLeftRadius: 0
+                    }}
+                />
+
+                <div
+                    className="pointer-events-none absolute inset-0 w-full h-full z-50"
+                    style={{
+                        background: "linear-gradient(90deg, black 0%, transparent 30%, transparent 70%, black 100%)",
+                    }}
+                />
+
+
+                <Swiper
+                    spaceBetween={0}
+                    freeMode={true}
+                    slidesPerView={3.8}
+                >
+                    <div className="swiper-wrapper flex gap-8 flex-nowrap">
                         {(() => {
                             const seenCategories = new Set();
 
@@ -39,19 +71,21 @@ export default function Projects() {
                                 }
 
                                 return (
-                                    <SlideContent
-                                        key={project.id ?? index}
-                                        {...project}
-                                        project={project}
-                                        category={category}
-                                        showCategory={isFirstOfCategory}
-                                        onOpenPopup={setSelectedProject}
-                                    />
+                                    <SwiperSlide key={project.id ?? index}>
+                                        <SlideContent
+                                            key={project.id ?? index}
+                                            {...project}
+                                            project={project}
+                                            category={category}
+                                            showCategory={isFirstOfCategory}
+                                            onOpenPopup={setSelectedProject}
+                                        />
+                                    </SwiperSlide>
                                 );
                             });
                         })()}
                     </div>
-                </div>
+                </Swiper>
             </div>
 
             {selectedProject && (
