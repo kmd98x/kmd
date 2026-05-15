@@ -64,13 +64,6 @@ export default function About() {
             <div className="max-md:-mt-32 pl-10 xl:pl-40" ref={textContainer}>
                 <h2 className="relative text-montez " ref={titleRef}>Over mij</h2>
                 <p className="text-[clamp(1rem,0.643rem_+_0.952vw,1.25rem)] md:max-w-[60ch] min-[1440px]:max-w-[64ch] max-md:pr-8" ref={textContent}>Ik ben Martina Doekharan, 3ᵉ jaars student Communication and Multimedia Design aan de Hogeschool van Amsterdam en ben afkomstig uit Suriname. Mijn focus ligt op visual design. Het creëren van digitale producten die niet alleen functioneel zijn, maar ook visueel overtuigen en gebruikers raken. Momenteel volg ik mijn 2e minor Visual Interface Design, waar ik mijn vaardigheden in compositie, typografie en visuele hiërarchie verder ontwikkel. Het mooiste vind ik wanneer design niet alleen goed werkt, maar ook impact maakt. Daar wil ik me tijdens mijn stage op richten.</p>
-                <a
-                    href="/kmd-cv.pdf"
-                    target="_blank"
-                    className="text-[#fffdd0] flex py-2 px-6 w-fit mt-7 items-center gap-1 card-surface"
-                >
-                    Download CV <FontAwesomeIcon icon={faDownload} className="size-3.5 ml-3 opacity-70" />
-                </a>
             </div>
         </section>
     );

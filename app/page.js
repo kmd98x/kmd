@@ -1,7 +1,6 @@
 import Header from "./sections/Header";
 import About from "./sections/About";
 import Footer from "./sections/Footer";
-// import ProjectsSection from "./components/projects/ProjectsSection";
 import Projects from "./sections/Projects";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
 			<Header />
 			<About />
 			<Projects />
-			{/* <ProjectsSection /> */}
 			<Footer />
 		</div>
 	);
