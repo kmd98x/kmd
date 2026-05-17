@@ -27,23 +27,23 @@ export default function Projects() {
                     <h2 className="relative text-montez" ref={titleRef}>Mijn projecten</h2>
                 </div>
 
-                <div
-                    className="absolute top-[310px] w-full h-[100px] z-50 bg-black"
+                {/* <div
+                    className="absolute top-[310px] w-screen h-[130px] z-50 bg-black"
                     style={{
                         borderRadius: "100%",
                         borderTopLeftRadius: 0,
-                        borderBottomLeftRadius: 0
+                        borderTopRightRadius: 0
                     }}
-                />
+                ></div>
 
                 <div
-                    className="absolute bottom-[150px] w-full h-[100px] z-50 bg-black"
+                    className="absolute bottom-[110px] w-full h-[150px] z-50 bg-black"
                     style={{
                         borderRadius: "100%",
-                        borderTopLeftRadius: 0,
-                        borderBottomLeftRadius: 0
+                        borderBottomLeftRadius: 0,
+                        borderBottomRightRadius: 0
                     }}
-                />
+                ></div> */}
 
                 <div
                     className="pointer-events-none absolute inset-0 w-full h-full z-50"
@@ -52,10 +52,19 @@ export default function Projects() {
                     }}
                 />
 
-
                 <Swiper
+                    className="overflow-visible"
+                    effect="coverflow"
+                    coverflowEffect={{
+                        rotate: 80,
+                        stretch: 0,
+                        depth: -100,
+                        modifier: .2,
+                        scale: 1.2,
+                    }}
                     spaceBetween={0}
                     freeMode={true}
+                    centeredSlides={true}
                     slidesPerView={3.8}
                 >
                     <div className="swiper-wrapper flex gap-8 flex-nowrap">
