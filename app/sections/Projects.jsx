@@ -2,7 +2,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
@@ -53,47 +55,48 @@ export default function Projects() {
                 />
 
                 <Swiper
-                    className="overflow-visible"
+                    className="projects-coverflow overflow-visible"
+                    modules={[EffectCoverflow]}
                     effect="coverflow"
+                    grabCursor
+                    centeredSlides
+                    slidesPerView="auto"
+                    spaceBetween={32}
                     coverflowEffect={{
                         rotate: 80,
-                        stretch: 0,
                         depth: -100,
-                        modifier: .2,
+                        modifier: 0.2,
                         scale: 1.2,
                     }}
-                    spaceBetween={0}
-                    freeMode={true}
-                    centeredSlides={true}
-                    slidesPerView={3.8}
                 >
-                    <div className="swiper-wrapper flex gap-8 flex-nowrap">
-                        {(() => {
-                            const seenCategories = new Set();
+                    {(() => {
+                        const seenCategories = new Set();
 
-                            return projects.map((project, index) => {
-                                const category = project.category ?? project.year;
-                                const isFirstOfCategory = category && !seenCategories.has(category);
+                        return projects.map((project, index) => {
+                            const category = project.category ?? project.year;
+                            const isFirstOfCategory =
+                                category && !seenCategories.has(category);
 
-                                if (isFirstOfCategory) {
-                                    seenCategories.add(category);
-                                }
+                            if (isFirstOfCategory) {
+                                seenCategories.add(category);
+                            }
 
-                                return (
-                                    <SwiperSlide key={project.id ?? index}>
-                                        <SlideContent
-                                            key={project.id ?? index}
-                                            {...project}
-                                            project={project}
-                                            category={category}
-                                            showCategory={isFirstOfCategory}
-                                            onOpenPopup={setSelectedProject}
-                                        />
-                                    </SwiperSlide>
-                                );
-                            });
-                        })()}
-                    </div>
+                            return (
+                                <SwiperSlide
+                                    key={project.id ?? index}
+                                    className="!w-[min(88vw,420px)]"
+                                >
+                                    <SlideContent
+                                        {...project}
+                                        project={project}
+                                        category={category}
+                                        showCategory={isFirstOfCategory}
+                                        onOpenPopup={setSelectedProject}
+                                    />
+                                </SwiperSlide>
+                            );
+                        });
+                    })()}
                 </Swiper>
             </div>
 

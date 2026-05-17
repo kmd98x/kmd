@@ -21,9 +21,14 @@ export default {
           from: { transform: "rotate(0deg)" },
           to: { transform: "rotate(360deg)" },
         },
+        "projects-marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "spin-slow": "spin-slow 24s linear infinite",
+        "projects-marquee": "projects-marquee var(--projects-marquee-duration, 75s) linear infinite",
       },
     },
   },

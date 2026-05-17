@@ -8,7 +8,8 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
         }
     };
 
-    const cardClass = "flex flex-col items-center items-stretch justify-between gap-12 min-h-[200px] md:min-h-[550px] py-7 px-5 group card-surface";
+    const cardClass =
+        "flex h-full w-full flex-col items-stretch justify-between gap-12 py-7 px-5 group card-surface";
     const content = (
         <>
             <div className="w-[240px] h-[240px] sm:w-[400px] sm:h-[400px] flex-shrink-0 overflow-hidden relative flex items-center justify-center mx-auto">
@@ -38,7 +39,7 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
     const isFirstOfCategory = Boolean(showCategory && category != null && String(category).trim() !== "");
 
     return (
-        <div className="project relative -mt-2 flex-shrink-0 w-[300px]  md:w-[480px]">
+        <div className="project relative -mt-2 h-full w-full flex-shrink-0">
             {slug && !onOpenPopup ? (
                 <a href={`project/${slug}`} className={`relative ${cardClass}`}>
                     {isFirstOfCategory && (
