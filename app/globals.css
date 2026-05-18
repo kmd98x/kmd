@@ -6,8 +6,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--font-inter: var(--font-inter);
+
+	/* Colors */
+	--color-dark-gold: #3A3632;
+}
+
 .container {
 	@apply max-w-6xl mx-auto px-8;
+}
+
+.text-outline {
+	color: transparent;
+	-webkit-text-stroke: 1.5px var(--color-dark-gold);
 }
 
 .card-surface {
@@ -47,7 +59,7 @@ p, a {
 body {
 	color: #e4e4e4;
 	line-height: 1.6;
-	background: #000000;
+	background: #0C0C0C;
 	margin: 0;
 }
 
@@ -56,10 +68,7 @@ header {
 	text-align: center;
 	padding: 20px 0;
 	margin-bottom: 20vh;
-	background: linear-gradient(to bottom,
-			rgba(102, 102, 102, 0.85),
-			#000000);
-	height: 80svh;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 }
