@@ -7,8 +7,8 @@ import MartinaDoekharan from "../components/MartinaDoekharan";
 export default function Header() {
     const [isOpen, setIsOpen] = React.useState(false);
 
-    const portfolioTypography = "text-var(--font-inter) text-8xl font-extrabold leading-none";
-    const portfolioOffset = "relative -top-40 left-0";
+    const portfolioTypography = "text-var(--font-inter) text-8xl font-extrabold leading-none mx-[1px]";
+    const portfolioOffset = "relative -top-40 left-2";
     const portfolioStyling = `${portfolioTypography} ${portfolioOffset} text-[var(--color-dark-gold)]`;
     const folLetterStack = `${portfolioTypography} ${portfolioOffset} inline-grid`;
     const folLetterFilled = `${portfolioTypography} col-start-1 row-start-1 z-0 text-[var(--color-dark-gold)]`;
@@ -29,8 +29,7 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className="my-auto flex justify-center items-center relative scale-125">
-
+            <div className="my-auto flex justify-center items-center relative scale-[clamp(1,calc(0.875+0.75vw),1.25)]">
                 <div className="absolute">
                     <span className={portfolioStyling}>P</span>
                     <span className={portfolioStyling}>O</span>
@@ -45,7 +44,7 @@ export default function Header() {
                     <span className={portfolioStyling}>I</span>
                     <span className={portfolioStyling}>O</span>
 
-                    <Image src="/sitting-martina.svg" className="absolute w-[280px] bottom-[-60px] left-[164px] z-10" alt="martina zit op een stoel en poseert" width={100} height={100} />
+                    <Image src="/sitting-martina.svg" className="absolute w-[280px] bottom-[-60px] left-[176px] z-10" alt="martina zit op een stoel en poseert" width={100} height={100} />
                 </div>
 
                 <MartinaDoekharan className="w-full z-10" />

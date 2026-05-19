@@ -19,7 +19,7 @@
 
 .text-outline {
 	color: transparent;
-	-webkit-text-stroke: 1.5px var(--color-dark-gold);
+	-webkit-text-stroke: 1px var(--color-dark-gold);
 }
 
 .card-surface {
