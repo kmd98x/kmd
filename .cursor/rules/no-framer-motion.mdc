@@ -1,0 +1,21 @@
+---
+description: Do not use Framer Motion; this project animates with GSAP instead.
+alwaysApply: true
+---
+
+# No Framer Motion
+
+This project does **not** use Framer Motion. Do not add it or use any of its APIs.
+
+## Forbidden
+
+- `motion.div`, `motion.span`, or any `motion.*` component
+- Imports from `framer-motion` or `motion` (the newer package name)
+- `AnimatePresence`, `useAnimation`, `useScroll` / `useTransform` from Framer Motion, etc.
+
+## Use instead
+
+- Plain React elements (`div`, `span`, `svg`, …)
+- **GSAP** (and **ScrollTrigger** when scroll-driven) for animation — patterns already used under `app/animations/` and related components
+
+If you need entrance or scroll-linked effects, wire them with GSAP in effects / animation modules, not `motion` components.
