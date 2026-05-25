@@ -67,7 +67,6 @@ body {
 header {
 	text-align: center;
 	padding: 20px 0;
-	margin-bottom: 20vh;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;

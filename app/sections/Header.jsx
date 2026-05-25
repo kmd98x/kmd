@@ -1,11 +1,20 @@
-"use client"
+"use client";
+
 import React from "react";
-import HamburgerMenu from "../components/HamburgerMenu";
 import Image from "next/image";
 import MartinaDoekharan from "../components/MartinaDoekharan";
+import { createHeaderHeroScroll } from "../animations/headerHeroScroll";
+
+const SCROLL_RELEASE_PX = 648;
 
 export default function Header() {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const heroShellRef = React.useRef(null);
+
+    React.useLayoutEffect(() => {
+        const shell = heroShellRef.current;
+        if (!shell) return undefined;
+        return createHeaderHeroScroll(shell, { releasePx: SCROLL_RELEASE_PX });
+    }, []);
 
     const portfolioTypography = "text-var(--font-inter) text-8xl font-extrabold leading-none mx-[1px]";
     const portfolioOffset = "relative -top-40 left-2";
@@ -17,38 +26,40 @@ export default function Header() {
     const folLetters = ["F", "O", "L"];
 
     return (
-        <header id="home" className="overflow-x-hidden">
-            <HamburgerMenu isOpen={isOpen} links={["Home", "Over mij", "Projecten", "Contact"]} setIsOpen={setIsOpen} />
+        <header id="home" className="relative h-screen w-screen overflow-x-hidden">
+            <div
+                ref={heroShellRef}
+                className="-z-10 w-full flex justify-center pointer-events-none fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+            >
+                <div
+                    id="hero-content"
+                    className="relative flex justify-center items-center scale-[clamp(1,calc(0.875+0.75vw),1.25)] pointer-events-auto will-change-transform"
+                >
+                    <div className="absolute">
+                        <span className={portfolioStyling}>P</span>
+                        <span className={portfolioStyling}>O</span>
+                        <span className={portfolioStyling}>R</span>
+                        <span className={portfolioStyling}>T</span>
+                        {folLetters.map((letter) => (
+                            <span key={letter} className={folLetterStack}>
+                                <span className={folLetterFilled} aria-hidden>{letter}</span>
+                                <span className={folLetterOutline}>{letter}</span>
+                            </span>
+                        ))}
+                        <span className={portfolioStyling}>I</span>
+                        <span className={portfolioStyling}>O</span>
 
-            <div className="fixed right-0 flex flex-col justify-center items-center gap-4 px-3 z-30">
-                <div className="flex flex-col gap-1.5 border border-[#FFFDD0]/50 py-2 w-12 rounded-md items-center justify-center transition duration-300 hover:scale-110 cursor-pointer"
-                    onClick={() => setIsOpen(!isOpen)}>
-                    <span className={`bg-[#FFFDD0]/50 h-px w-5 inline-block transition-transform duration-1000 ${isOpen ? "translate-y-[7px] rotate-45" : ""}`}></span>
-                    <span className={`bg-[#FFFDD0]/50 h-px inline-block transition duration-1000 ${isOpen ? "w-0" : "w-5"}`}></span>
-                    <span className={`bg-[#FFFDD0]/50 h-px w-5 inline-block transition-transform duration-1000 ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`}></span>
+                        <Image
+                            src="/sitting-martina.svg"
+                            className="absolute w-[280px] bottom-[-60px] left-[176px] z-10"
+                            alt="martina zit op een stoel en poseert"
+                            width={100}
+                            height={100}
+                        />
+                    </div>
+
+                    <MartinaDoekharan className="w-full z-10" />
                 </div>
-            </div>
-
-            <div className="my-auto flex justify-center items-center relative scale-[clamp(1,calc(0.875+0.75vw),1.25)]">
-                <div className="absolute">
-                    <span className={portfolioStyling}>P</span>
-                    <span className={portfolioStyling}>O</span>
-                    <span className={portfolioStyling}>R</span>
-                    <span className={portfolioStyling}>T</span>
-                    {folLetters.map((letter) => (
-                        <span key={letter} className={folLetterStack}>
-                            <span className={folLetterFilled} aria-hidden>{letter}</span>
-                            <span className={folLetterOutline}>{letter}</span>
-                        </span>
-                    ))}
-                    <span className={portfolioStyling}>I</span>
-                    <span className={portfolioStyling}>O</span>
-
-                    <Image src="/sitting-martina.svg" className="absolute w-[280px] bottom-[-60px] left-[176px] z-10" alt="martina zit op een stoel en poseert" width={100} height={100} />
-                </div>
-
-                <MartinaDoekharan className="w-full z-10" />
-
             </div>
         </header>
     );

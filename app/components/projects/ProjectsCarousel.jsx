@@ -123,7 +123,7 @@ export default function ProjectsCarousel() {
             <div
                 className="pointer-events-none absolute inset-0 w-full h-full z-50"
                 style={{
-                    background: "linear-gradient(90deg, black 0%, transparent 20%, transparent 80%, black 100%)",
+                    background: "linear-gradient(90deg, #0C0C0C 0%, transparent 20%, transparent 80%, #0C0C0C 100%)",
                 }}
             ></div>
 

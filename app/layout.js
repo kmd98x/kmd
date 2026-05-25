@@ -1,5 +1,6 @@
 import { Alegreya_Sans, Alegreya_Sans_SC, Montez, Inter } from "next/font/google";
 import "./globals.css";
+import Navigation from "./sections/Navigation";
 
 const AlegreyaSans = Alegreya_Sans({
 	subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
 			<body
 				className={`${AlegreyaSans.variable} ${AlegreyaSansSC.variable} ${MontezFont.variable} ${InterFont.variable} antialiased`}
 			>
+				<Navigation />
 				{children}
 			</body>
 		</html>

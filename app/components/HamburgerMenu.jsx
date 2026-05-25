@@ -1,19 +1,9 @@
 import React from "react";
 
-export default function hamburgermenu({ links, isOpen, setIsOpen }) {
+const SECTION_IDS = ["home", "about", "projects", "footer"];
+
+export default function HamburgerMenu({ links, isOpen, onNavigate }) {
     const linkStyles = "text-[#FFFDD0] inline-block p-3 md:p-5 text-[12px] md:text-base";
-
-    const scrollToSection = (e, sectionId) => {
-        e.preventDefault();
-
-        setIsOpen(false);
-
-        const element = document.getElementById(sectionId);
-		
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth", duration: 4000 });
-        }
-    };
 
     return (
         <nav
@@ -24,42 +14,17 @@ export default function hamburgermenu({ links, isOpen, setIsOpen }) {
             }`}
         >
             <ul className="pt-10">
-                <li>
-                    <a
-                        className={linkStyles}
-                        onClick={(e) => scrollToSection(e, "home")}
-                        href="#home"
-                    >
-                        {links[0]}
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className={linkStyles}
-                        onClick={(e) => scrollToSection(e, "about")}
-                        href="#about"
-                    >
-                        {links[1]}
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className={linkStyles}
-                        onClick={(e) => scrollToSection(e, "projects")}
-                        href="#projects"
-                    >
-                        {links[2]}
-                    </a>
-                </li>
-                <li>
-                    <a
-                        className={linkStyles}
-                        onClick={(e) => scrollToSection(e, "footer")}
-                        href="#footer"
-                    >
-                        {links[3]}
-                    </a>
-                </li>
+                {links.map((label, index) => (
+                    <li key={SECTION_IDS[index]}>
+                        <a
+                            className={linkStyles}
+                            onClick={(e) => onNavigate(e, SECTION_IDS[index])}
+                            href={`#${SECTION_IDS[index]}`}
+                        >
+                            {label}
+                        </a>
+                    </li>
+                ))}
             </ul>
         </nav>
     );
