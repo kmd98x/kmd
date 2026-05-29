@@ -27,7 +27,7 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
                 {(slug || onOpenPopup) && (
                     <button
                         type="button"
-                        className="inline-block text-[#fffdd0] px-2 py-1 mt-2 card-surface"
+                        className="inline-block text-[#BB997E] px-2 py-1 mt-2 card-surface"
                     >
                         {slug ? "Bekijk project" : "Bekijk meer"}
                     </button>
@@ -43,7 +43,7 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
             {slug && !onOpenPopup ? (
                 <a href={`project/${slug}`} className={`relative ${cardClass}`}>
                     {isFirstOfCategory && (
-                        <span className="absolute top-1/2 left-0 -rotate-90 text-3xl font-semibold tracking-wide uppercase text-[#fffdd0]/80">
+                        <span className="absolute top-1/2 left-0 -rotate-90 text-3xl font-semibold tracking-wide uppercase text-[#BB997E]/80">
                             {category}
                         </span>
                     )}
@@ -57,7 +57,7 @@ export default function SlideContent({ image, title, text, excerpt, link, linkTe
                     className={`${cardClass} relative w-full text-left cursor-pointer`}
                 >
                     {isFirstOfCategory && (
-                        <span className="absolute top-1/2 -translate-y-1/2 -left-[36px] font-alegreya-sans -rotate-90 text-2xl tracking-wide uppercase text-[#fffdd0]/80">
+                        <span className="absolute top-1/2 -translate-y-1/2 -left-[36px] font-alegreya-sans -rotate-90 text-2xl tracking-wide uppercase text-[#BB997E]/80">
                             {category}
                         </span>
                     )}

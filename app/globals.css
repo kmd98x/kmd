@@ -23,7 +23,7 @@
 }
 
 .card-surface {
-	@apply rounded-md border border-[#fffdd0]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)];
+	@apply rounded-md border border-[#BB997E]/[.1] bg-gradient-to-br from-white/[.08] to-white/[.01] transition-transform duration-300 hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(248,241,72,0.15)];
 }
 
 h1,
@@ -33,12 +33,12 @@ h4,
 h5,
 h6,
 nav a {
-	@apply text-[#fffdd0] tracking-[0.2em] uppercase;
+	@apply text-[#BB997E] tracking-[0.2em] uppercase;
 	font-family: var(--font-alegreya-sans-sc), sans-serif;
 }
 
 p, a {
-	@apply text-[#fffdd0] tracking-[0.06em];
+	@apply text-[#BB997E] tracking-[0.06em];
 	font-family: var(--font-alegreya-sans), sans-serif;
 }
 
@@ -89,7 +89,7 @@ header {
 /* Swiper navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
-	color: #fffdd0;
+	color: #BB997E;
 	width: 28px;
 	height: 28px;
 }
@@ -113,10 +113,10 @@ header {
 }
 
 .swiper-pagination-bullet {
-	background-color: #fffdd0;
+	background-color: #BB997E;
 	border-radius: 9999px;
 }
 
 .swiper-pagination-bullet-active {
-	background-color: #fffdd0;
+	background-color: #BB997E;
 }

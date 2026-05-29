@@ -20,32 +20,32 @@ export default function ContactForm() {
             className="my-10 flex flex-col items-start gap-8"
         >
             <div className="flex flex-col w-full items-start">
-                <label htmlFor="name" className="text-[#fffdd0]">Naam</label>
+                <label htmlFor="name" className="text-[#BB997E]">Naam</label>
                 <input
                     type="text"
                     id="name"
                     name="name"
-                    className="w-full p-1 bg-transparent border-b-[0.5px] border-[#fffdd0]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#fffdd0] transition"
+                    className="w-full p-1 bg-transparent border-b-[0.5px] border-[#BB997E]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#BB997E] transition"
                 />
             </div>
 
             <div className="flex flex-col w-full items-start">
-                <label htmlFor="mail" className="text-[#fffdd0]">Email</label>
+                <label htmlFor="mail" className="text-[#BB997E]">Email</label>
                 <input
                     type="mail"
                     id="mail"
                     name="mail"
-                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#fffdd0] transition"
+                    className="w-full p-1 bg-transparent border-b border-[#BB997E]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#BB997E] transition"
                 />
             </div>
 
             <div className="flex flex-col w-full items-start">
-                <label htmlFor="message" className="text-[#fffdd0]">Bericht</label>
+                <label htmlFor="message" className="text-[#BB997E]">Bericht</label>
                 <textarea
                     name="message"
                     id="message"
                     rows={3}
-                    className="w-full p-1 bg-transparent border-b border-[#fffdd0]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#fffdd0] transition"
+                    className="w-full p-1 bg-transparent border-b border-[#BB997E]/50 rounded-none focus:outline-none focus:ring-0 focus:border-[#BB997E] transition"
                 ></textarea>
             </div>
 

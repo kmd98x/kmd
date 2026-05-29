@@ -31,17 +31,17 @@ export default function Navigation() {
                     type="button"
                     aria-label={isOpen ? "Menu sluiten" : "Menu openen"}
                     aria-expanded={isOpen}
-                    className="flex flex-col gap-1.5 border border-[#FFFDD0]/50 py-2 w-12 rounded-md items-center justify-center transition duration-300 hover:scale-110 cursor-pointer"
+                    className="flex flex-col gap-1.5 border border-[#BB997E]/50 py-2 w-12 rounded-md items-center justify-center transition duration-300 hover:scale-110 cursor-pointer"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     <span
-                        className={`bg-[#FFFDD0]/50 h-px w-5 inline-block transition-transform duration-1000 ${isOpen ? "translate-y-[7px] rotate-45" : ""}`}
+                        className={`bg-[#BB997E]/50 h-px w-5 inline-block transition-transform duration-1000 ${isOpen ? "translate-y-[7px] rotate-45" : ""}`}
                     />
                     <span
-                        className={`bg-[#FFFDD0]/50 h-px inline-block transition duration-1000 ${isOpen ? "w-0" : "w-5"}`}
+                        className={`bg-[#BB997E]/50 h-px inline-block transition duration-1000 ${isOpen ? "w-0" : "w-5"}`}
                     />
                     <span
-                        className={`bg-[#FFFDD0]/50 h-px w-5 inline-block transition-transform duration-1000 ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
+                        className={`bg-[#BB997E]/50 h-px w-5 inline-block transition-transform duration-1000 ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`}
                     />
                 </button>
             </div>
