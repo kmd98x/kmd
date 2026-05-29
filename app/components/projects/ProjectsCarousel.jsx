@@ -15,6 +15,7 @@ export default function ProjectsCarousel() {
     const trackRef = useRef(null);
     const loopWidthRef = useRef(0);
     const dragRef = useRef({ startX: 0, startScroll: 0 });
+    const isPointerDownRef = useRef(false);
     const isDraggingRef = useRef(false);
     const didDragRef = useRef(false);
 
@@ -65,28 +66,32 @@ export default function ProjectsCarousel() {
         const viewport = viewportRef.current;
         if (!viewport) return;
 
-        isDraggingRef.current = true;
+        isPointerDownRef.current = true;
+        isDraggingRef.current = false;
         didDragRef.current = false;
-        setIsDragging(true);
+        setIsDragging(false);
 
         dragRef.current = {
             startX: event.clientX,
             startScroll: viewport.scrollLeft,
         };
-
-        viewport.setPointerCapture(event.pointerId);
     };
 
     const handlePointerMove = (event) => {
-        if (!isDraggingRef.current) return;
+        if (!isPointerDownRef.current) return;
 
         const viewport = viewportRef.current;
         if (!viewport) return;
 
         const deltaX = event.clientX - dragRef.current.startX;
 
-        if (Math.abs(deltaX) > DRAG_CLICK_THRESHOLD_PX) {
+        if (!isDraggingRef.current) {
+            if (Math.abs(deltaX) <= DRAG_CLICK_THRESHOLD_PX) return;
+
+            isDraggingRef.current = true;
             didDragRef.current = true;
+            setIsDragging(true);
+            viewport.setPointerCapture(event.pointerId);
         }
 
         viewport.scrollLeft = dragRef.current.startScroll - deltaX;
@@ -94,13 +99,14 @@ export default function ProjectsCarousel() {
     };
 
     const endDrag = (event) => {
-        if (!isDraggingRef.current) return;
+        if (!isPointerDownRef.current) return;
 
         const viewport = viewportRef.current;
         if (viewport?.hasPointerCapture(event.pointerId)) {
             viewport.releasePointerCapture(event.pointerId);
         }
 
+        isPointerDownRef.current = false;
         isDraggingRef.current = false;
         setIsDragging(false);
         normalizeScroll();
